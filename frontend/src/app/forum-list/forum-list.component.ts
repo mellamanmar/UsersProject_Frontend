@@ -22,7 +22,7 @@ export class ForumListComponent implements OnInit {
     this.forumService.deletePost(postId).subscribe(response => {
       // Realizar acciones después de eliminar la publicación, si es necesario
       console.log(response);
-      // Por ejemplo, puedes volver a cargar la lista de publicaciones después de eliminar una
+      // Por ejemplo, volver a cargar la lista de publicaciones después de eliminar una
       this.getPosts();
     });
   }

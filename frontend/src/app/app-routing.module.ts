@@ -4,9 +4,9 @@ import { ForumListComponent } from './forum-list/forum-list.component';
 import { ForumFormComponent } from './forum-form/forum-form.component';
 
 const routes: Routes = [
-  { path: 'forum', component: ForumListComponent },
-  { path: 'create-post', component: ForumFormComponent },
-  { path: '', redirectTo: '/forum', pathMatch: 'full' }
+  { path: '/forum', component: ForumListComponent },
+  { path: '/create-post', component: ForumFormComponent },
+  //{ path: '', redirectTo: '/forum', pathMatch: 'full' }
 ];
 
 @NgModule({
