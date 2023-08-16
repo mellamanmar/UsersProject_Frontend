@@ -18,18 +18,18 @@ export class ForumListComponent implements OnInit {
     });
   }
 
+  private getPosts(): void {
+    this.forumService.getPosts().subscribe(posts => {
+      this.posts = posts;
+    });
+  }
+
   deletePost(postId: number): void {
     this.forumService.deletePost(postId).subscribe(response => {
       // Realizar acciones después de eliminar la publicación, si es necesario
       console.log(response);
-      // Por ejemplo, volver a cargar la lista de publicaciones después de eliminar una
+      // volver a cargar la lista de publicaciones después de eliminar una
       this.getPosts();
-    });
-  }
-
-  private getPosts(): void {
-    this.forumService.getPosts().subscribe(posts => {
-      this.posts = posts;
     });
   }
 }

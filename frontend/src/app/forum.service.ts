@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ForumService {
-  private baseUrl = 'http://localhost:3500'; //URL de backend
+  private baseUrl = 'http://localhost:3000'; //URL de backend
 
   constructor(private http: HttpClient) {}
 

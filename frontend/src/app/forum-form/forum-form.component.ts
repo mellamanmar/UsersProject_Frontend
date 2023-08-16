@@ -18,6 +18,9 @@ export class ForumFormComponent {
     this.forumService.createPost(newPost).subscribe(response => {
       // Realizar acciones después de crear la publicación, si es necesario
       console.log(response);
+      // Limpiar los campos del formulario despues de crear publicacion
+      this.title = '';
+      this.content = '';
     });
   }
 }
