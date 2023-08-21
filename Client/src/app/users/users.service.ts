@@ -15,7 +15,8 @@ export class UsersService {
     return this.http.get<User[]>( this.domain + '/users')
   }
 
-  public getUserProfile (_id: User): Observable<User[]> {
-    return this.http.get<User[]>(this.domain + '/:id')
+  public getUserProfile (_id: User): Observable<User> {
+    let direction = this.domain + _id
+    return this.http.get<User>(direction)
   }
 }

@@ -7,13 +7,15 @@ import { UsersComponent } from './users/users.component';
 import { AuthComponent } from './auth/auth.component';
 import { ForumComponent } from './forum/forum.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditUserComponent } from './users/update/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     AuthComponent,
-    ForumComponent
+    ForumComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

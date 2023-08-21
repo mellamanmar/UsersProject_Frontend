@@ -13,11 +13,12 @@ export class UsersComponent implements OnInit{
   user:any[]=[];
   id: User [] = []
 
-  constructor(private usersService:UsersService){}
+  constructor(
+    private usersService:UsersService ) {}
 
   ngOnInit(): void {
       this.getUser();
-      this.getUserForId();
+
   }
 
   getUser(){
@@ -29,7 +30,7 @@ export class UsersComponent implements OnInit{
   }
 
   getUserForId(_id:User){
-    this.usersService.getUserProfile()
+    this.usersService.getUserProfile(_id)
     .pipe(
       tap (res => console.log(res))
     )
