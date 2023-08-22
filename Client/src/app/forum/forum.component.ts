@@ -1,47 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-
 import { ForumService } from './forum.service';
 
 @Component({
   selector: 'app-forum',
   templateUrl: './forum.component.html',
-  styleUrls: ['./forum.component.css'],
-  providers: [ForumService]
+  styleUrls: ['./forum.component.css']
 })
 export class ForumComponent implements OnInit {
   posts: any[] = [];
-  
 
-  constructor(private http: HttpClient) { }
+  constructor(private forumService: ForumService) {}
 
   ngOnInit(): void {
     this.getPosts();
   }
 
-  getPosts() {
-    this.http.get<any[]>('http://localhost:3000/posts').subscribe(
-      (response) => {
-        this.posts = response;
-      },
-      (error) => {
-        console.error('Error fetching posts:', error);
-      }
-    );
+  getPosts(): void {
+    this.forumService.getPosts()
+      .subscribe(posts => this.posts = posts);
   }
 
-  deletePost(postId: string) {
-    if (confirm('Are you sure you want to delete this post?')) {
-      this.http.delete(`http://localhost:3000/delete/${postId}`).subscribe(
-        () => {
-          console.log('Post deleted successfully');
-          this.getPosts(); // Refresh the list after deletion
-        },
-        (error) => {
-          console.error('Error deleting post:', error);
-        }
-      );
-    }
+  deletePost(postId: string): void {
+    this.forumService.deletePost(postId)
+      .subscribe(() => {
+        // Actualizar la lista de publicaciones después de eliminar
+        this.getPosts();
+      });
   }
 }

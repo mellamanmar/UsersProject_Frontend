@@ -11,6 +11,8 @@ import { ForumComponent } from './forum/forum.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UsersEditComponent } from './users-edit/users-edit.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { FormsModule } from '@angular/forms';
 
 // Definir rutas
 const routes: Routes =[
@@ -29,7 +31,9 @@ const routes: Routes =[
     ForumComponent,
     LoginComponent,
     HomeComponent,
-    UsersEditComponent
+    UsersEditComponent,
+    CreatePostComponent,
+    FormsModule,
   ],
   imports: [
     BrowserModule,
