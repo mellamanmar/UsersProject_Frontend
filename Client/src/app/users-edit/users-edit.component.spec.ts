@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ForumListComponent } from './forum-list.component';
+import { UsersEditComponent } from './users-edit.component';
 
-describe('ForumListComponent', () => {
-  let component: ForumListComponent;
-  let fixture: ComponentFixture<ForumListComponent>;
+describe('UsersEditComponent', () => {
+  let component: UsersEditComponent;
+  let fixture: ComponentFixture<UsersEditComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ForumListComponent]
+      declarations: [UsersEditComponent]
     });
-    fixture = TestBed.createComponent(ForumListComponent);
+    fixture = TestBed.createComponent(UsersEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
