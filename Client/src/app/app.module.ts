@@ -15,10 +15,9 @@ import { SignupComponent } from './auth/signup/signup.component'
     AppComponent,
     UsersComponent,
     ForumComponent,
-    EditUserComponent,
     SigninComponent,
     SignupComponent,
-
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
