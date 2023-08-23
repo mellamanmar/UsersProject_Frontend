@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service'
+import { AuthService } from '../../services/auth.service'
 import { tap } from 'rxjs/operators';
 
 
@@ -27,9 +27,10 @@ export class SignUpComponent implements OnInit{
     ngOnInit(): void {
   }
 
+  // Función de prueba de conexión
   // signUp() {
   //   console.log(this.newUser)
-  // }  Función de prueba de conexión
+  // }
 
   signUp(){
     this.authService.signUpUser(this.newUser)
@@ -38,6 +39,7 @@ export class SignUpComponent implements OnInit{
           console.log(res)
 
         })
-    ).subscribe(res => localStorage.setItem('token', res.token))
+    ).subscribe(res => {localStorage.setItem('token', res.token)
+        this.router.navigate(['signin'])})
   }
 }

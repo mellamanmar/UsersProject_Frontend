@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from './users.service'
+import { UserService } from '../services/user.service'
 import { User } from './User';
 import { tap } from 'rxjs/operators';
 
@@ -11,10 +11,9 @@ import { tap } from 'rxjs/operators';
 export class UsersComponent implements OnInit{
 
   user:any[]=[];
-  _id: User [] = []
 
   constructor(
-    private usersService:UsersService ) {}
+    private usersService:UserService ) {}
 
   ngOnInit(): void {
       this.getUser();
@@ -28,11 +27,5 @@ export class UsersComponent implements OnInit{
     .subscribe()
   }
 
-  getUserForId(_id:User){
-    this.usersService.getUserProfile(_id)
-    .pipe(
-      tap (res => console.log(res))
-    )
-    .subscribe()
-  }
+  
 }

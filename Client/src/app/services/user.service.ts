@@ -6,19 +6,20 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'https://usersproject-database.onrender.com/api'; // Cambiar la URL según tu configuración backend
+
+  private URL = 'https://usersproject-database.onrender.com/api'; // Cambiar la URL según tu configuración backend
 
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl + '/users');
+    return this.http.get<any[]>(this.URL + '/users');
   }
 
   editUser(userId: string, userData: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/edit/${userId}`, userData);
+    return this.http.put<any>(`${this.URL}/edit/${userId}`, userData);
   }
 
   deleteUser(userId: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${userId}`);
+    return this.http.delete<any>(`${this.URL}/${userId}`);
   }
 }
