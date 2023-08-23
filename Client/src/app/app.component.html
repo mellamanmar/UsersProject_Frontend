@@ -1,1 +1,13 @@
-<app-forum></app-forum>
+<!-- header -->
+<a [routerLink]="['/inicio']">Foro Genius Botsitos</a>
+	<ul>
+		<li><a [routerLink]="['/login']">Iniciar sesión</a></li>
+		<li><a [routerLink]="['/forum']">Foro</a></li>
+		<li><a [routerLink]="['/auth']">Auth</a></li>
+		<li><a [routerLink]="['/users']">Usuarios</a></li>
+		<li><a [routerLink]="['/users/edit/:id']">Editar Usuario</a></li>
+		<li><a [routerLink]="['/forum/admin']">Administrar Foro</a></li>
+	</ul>
+
+<!-- content -->
+<router-outlet></router-outlet>

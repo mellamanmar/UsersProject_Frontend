@@ -3,11 +3,11 @@
 	<p class="lead">Pon tus dudas, aprende y ayuda a tus compañeros desarrolladores</p>
 	<p>Selecciona una sección:</p>
 	<ul>
-		<li><a routerLink="/login">Iniciar sesión</a></li>
-		<li><a routerLink="/forum">Foro</a></li>
-		<li><a routerLink="/auth">Auth</a></li>
-		<li><a routerLink="/users">Usuarios</a></li>
-		<li><a routerLink="/users/edit/1">Editar Usuario</a></li>
-		<li><a routerLink="/forum/admin">Administrar Foro</a></li>
+		<li><a [routerLink]="['/login']">Iniciar sesión</a></li>
+		<li><a [routerLink]="['/forum']">Foro</a></li>
+		<li><a [routerLink]="['/auth']">Auth</a></li>
+		<li><a [routerLink]="['/users']">Usuarios</a></li>
+		<li><a [routerLink]="['/users/edit/:id']">Editar Usuario</a></li>
+		<li><a [routerLink]="['/forum/admin']">Administrar Foro</a></li>
 	</ul>
 </div>
