@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
-import { EditUserComponent } from './users/update/edit-user/edit-user.component'
+// import { EditUserComponent } from './users/update/edit-user/edit-user.component';
+// import { SignupComponent } from './auth/signup/signup.component'
+import { EditUserComponent } from './components/edit-user/edit-user.component'
 
 <<<<<<< HEAD
 //Components
@@ -31,8 +33,12 @@ const routes: Routes = [
 =======
 const routes: Routes = [
   {path: 'user', component: UsersComponent},
+<<<<<<< HEAD
   {path: 'edit/:id', component: EditUserComponent},
 >>>>>>> c027e976a2aad437607bce45b32812ef00d9f0a0
+=======
+  {path: 'edit', component: EditUserComponent},
+>>>>>>> 8d736ad79ef16b11dd0c3ae3c3d8cd2ce4f77a37
 ];
 
 @NgModule({
