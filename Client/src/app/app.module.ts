@@ -9,7 +9,7 @@ import { ForumComponent } from './forum/forum.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditUserComponent } from './users/update/edit-user/edit-user.component';
 import { SigninComponent } from './auth/signin/signin.component';
-import { SignupComponent } from './auth/signup/signup.component'
+import { SignUpComponent } from './auth/signup/signup.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { SignupComponent } from './auth/signup/signup.component'
     UsersComponent,
     ForumComponent,
     SigninComponent,
-    SignupComponent,
+    SignUpComponent,
     EditUserComponent
   ],
   imports: [
