@@ -11,6 +11,6 @@ export class UsersService {
   constructor(private http:HttpClient) { }
 
   public getUserProfile(): Observable<any> {
-    return this.http.get<any>( this.domain + '/:id')
+    return this.http.get<any>( this.domain + '/users')
   }
 }
