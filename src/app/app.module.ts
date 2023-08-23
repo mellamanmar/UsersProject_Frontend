@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ForumComponent } from './forum/forum.component';
 import { UsersComponent } from './users/users.component';
 import { ForumListComponent } from './forum-list/forum-list.component';
 import { ForumFormComponent } from './forum-form/forum-form.component';
 import { Routes,RouterModule } from '@angular/router';
-import { FormUserComponent } from './users/form-user.component';
-
+import { RegisterComponent } from './users/register/register.component'
 const routes:Routes=[
-  {path:'', redirectTo:'/users',pathMatch:'full'  },
-  {path:'users',component:UsersComponent},
-  {path:'users/form',component:FormUserComponent},
-  {path:'users/form/:id',component:FormUserComponent},
-
+  {path:'', redirectTo:'/register',pathMatch:'full'  },
+  {path:'register',component:RegisterComponent},
+  {path:'register/user',component:UsersComponent},
+  {path:'register/user/:id',component:RegisterComponent},
 
 ]
 
@@ -26,12 +24,13 @@ const routes:Routes=[
     UsersComponent,
     ForumListComponent,
     ForumFormComponent,
-    FormUserComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
