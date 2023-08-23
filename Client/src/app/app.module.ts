@@ -33,13 +33,14 @@ const routes: Routes =[
     HomeComponent,
     UsersEditComponent,
     CreatePostComponent,
-    FormsModule,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
