@@ -11,7 +11,7 @@ import { tap } from 'rxjs/operators';
 export class UsersComponent implements OnInit{
 
   user:any[]=[];
-  id: User [] = []
+  _id: User [] = []
 
   constructor(
     private usersService:UsersService ) {}

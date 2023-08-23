@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:3000/api/users'; // Cambiar la URL según tu configuración backend
+  private apiUrl = 'http://localhost:3000/api'; // Cambiar la URL según tu configuración backend
 
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<any[]>(this.apiUrl + '/users');
   }
 
   editUser(userId: string, userData: any): Observable<any> {
