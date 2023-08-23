@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service'
-import { User } from '../../users/User'
 import { tap } from 'rxjs/operators';
 
 
@@ -30,12 +29,15 @@ export class SignUpComponent implements OnInit{
 
   // signUp() {
   //   console.log(this.newUser)
-  // }
+  // }  Función de prueba de conexión
 
   signUp(){
     this.authService.signUpUser(this.newUser)
       .pipe(
-        tap (res => console.log(res))
-    ).subscribe()
+        tap (res =>{
+          console.log(res)
+
+        })
+    ).subscribe(res => localStorage.setItem('token', res.token))
   }
 }
