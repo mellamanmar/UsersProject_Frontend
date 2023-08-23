@@ -1,9 +1,15 @@
 <h1>Foro</h1>
+<form (submit)="createPost()">
+  <input [(ngModel)]="title" placeholder="Título">
+  <textarea [(ngModel)]="content" placeholder="Contenido"></textarea>
+  <button type="submit">Crear Publicación</button>
+</form>
+
 <div *ngFor="let post of posts">
   <div class="post">
     <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
     <p>Publicado por: {{ post.username }}</p>
-    <button (click)="deletePost(post._id)">Eliminar</button>
+    <p>{{ post.content }}</p>
+    <button type="button" (click)="deletePost(post._id)">Eliminar</button>
   </div>
 </div>

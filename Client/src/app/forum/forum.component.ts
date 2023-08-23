@@ -8,6 +8,8 @@ import { ForumService } from './forum.service';
 })
 export class ForumComponent implements OnInit {
   posts: any[] = [];
+  postService: any;
+  router: any;
 
   constructor(private forumService: ForumService) {}
 
@@ -15,6 +17,24 @@ export class ForumComponent implements OnInit {
     this.getPosts();
   }
 
+  title: string = '';
+  content: string = '';
+
+  createPost(): void {
+    const postData = {
+      title: this.title,
+      content: this.content
+    };
+  
+    this.forumService.createPost(postData)
+      .subscribe(() => {
+        // Publicación creada exitosamente
+        this.getPosts(); //Actualizar lista de publicaciones
+        this.title = ''; //Limpiar campos despues de crear publicacior
+        this.content = '';
+      });
+  }
+  
   getPosts(): void {
     this.forumService.getPosts()
       .subscribe(posts => this.posts = posts);

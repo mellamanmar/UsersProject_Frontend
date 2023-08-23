@@ -11,7 +11,6 @@ import { ForumComponent } from './forum/forum.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UsersEditComponent } from './users-edit/users-edit.component';
-import { CreatePostComponent } from './create-post/create-post.component';
 import { FormsModule } from '@angular/forms';
 
 // Definir rutas
@@ -31,8 +30,7 @@ const routes: Routes =[
     ForumComponent,
     LoginComponent,
     HomeComponent,
-    UsersEditComponent,
-    CreatePostComponent,
+    UsersEditComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +38,6 @@ const routes: Routes =[
     HttpClientModule,
     RouterModule.forRoot(routes),
     FormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
