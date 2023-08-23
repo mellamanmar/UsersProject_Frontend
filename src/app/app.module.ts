@@ -9,12 +9,13 @@ import { ForumListComponent } from './forum-list/forum-list.component';
 import { ForumFormComponent } from './forum-form/forum-form.component';
 import { Routes,RouterModule } from '@angular/router';
 import { RegisterComponent } from './users/register/register.component'
-const routes:Routes=[
-  {path:'', redirectTo:'/register',pathMatch:'full'  },
-  {path:'register',component:RegisterComponent},
-  {path:'register/user',component:UsersComponent},
-  {path:'register/user/:id',component:RegisterComponent},
 
+const routes:Routes=[ 
+  {path:'', redirectTo:'/register',pathMatch:'full'  }, 
+  {path:'register',component:RegisterComponent}, 
+  {path:'register/user',component:UsersComponent}, 
+  {path:'register/user/:id',component:RegisterComponent}, 
+ 
 ]
 
 @NgModule({
