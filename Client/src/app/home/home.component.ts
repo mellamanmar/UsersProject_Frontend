@@ -10,10 +10,9 @@ export class HomeComponent implements OnInit {
 	public page_title: string;
 
 	constructor() { 
-		this.page_title = 'Bienvenido al foro de programación';
+		this.page_title = 'Bienvenido al foro de programación Genius Botsitos';
 	}
 
 	ngOnInit(): void {
 	}
-
 }

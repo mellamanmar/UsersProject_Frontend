@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UsersEditComponent } from './users-edit/users-edit.component';
 import { FormsModule } from '@angular/forms';
+import { ForumAdminComponent } from './forum-admin/forum-admin.component';
 
 // Definir rutas
 const routes: Routes =[
@@ -19,8 +20,10 @@ const routes: Routes =[
   { path: 'login', component: LoginComponent},
   { path: 'forum', component: ForumComponent},
   { path: 'auth', component: AuthComponent},
-  { path: 'users', component: UsersComponent}
-]
+  { path: 'users', component: UsersComponent},
+  { path: 'users/edit/:id', component: UsersEditComponent }, // Ruta para editar usuarios
+  { path: 'forum/admin', component: ForumAdminComponent } // Ruta para administrar el foro (por ejemplo, para administradores)
+];
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ const routes: Routes =[
     ForumComponent,
     LoginComponent,
     HomeComponent,
-    UsersEditComponent
+    UsersEditComponent,
+    ForumAdminComponent
   ],
   imports: [
     BrowserModule,
