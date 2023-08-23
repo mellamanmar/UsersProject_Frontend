@@ -9,14 +9,14 @@ import { Router } from '@angular/router'
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit{
- 
+
   user = { }
 
   constructor(
     private authService : AuthService,
     private router: Router){ }
 
-  ngOnInit() { 
+  ngOnInit() {
 }
 
   signUp(){
