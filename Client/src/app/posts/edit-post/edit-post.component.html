@@ -1,0 +1,12 @@
+<h2>Editar Publicación</h2>
+<div *ngIf="post">
+  <form (ngSubmit)="updatePost()">
+    <label>Title: </label>
+    <input type="text" [(ngModel)]="post.title" name="title" required>
+    <br>
+    <label>Content: </label>
+    <textarea [(ngModel)]="post.content" name="content" required></textarea>
+    <br>
+    <button type="submit">Update Post</button>
+  </form>
+</div>
