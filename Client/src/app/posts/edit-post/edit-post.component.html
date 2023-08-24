@@ -1,5 +1,5 @@
 <h2>Editar Publicación</h2>
-<div *ngIf="post">
+<!-- <div *ngIf="post"> -->
   <form (ngSubmit)="updatePost()">
     <label>Title: </label>
     <input type="text" [(ngModel)]="post.title" name="title" required>
@@ -9,4 +9,4 @@
     <br>
     <button type="submit">Update Post</button>
   </form>
-</div>
+<!-- </div> -->
