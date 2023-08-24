@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ForumService } from './forum.service';
+import { ForumService, Post } from './forum.service';
 
 @Component({
   selector: 'app-forum',
@@ -7,9 +7,13 @@ import { ForumService } from './forum.service';
   styleUrls: ['./forum.component.css']
 })
 export class ForumComponent implements OnInit {
-  posts: any[] = [];
-  postService: any;
-  router: any;
+  posts: Post[] = [];
+
+  editingPost: boolean = false;
+  editedPost: Post = { _id: '', username: '', title: '', content: '' };
+
+  searchUsername: string = '';
+  searchPostId: string = '';
 
   constructor(private forumService: ForumService) {}
 
@@ -28,9 +32,8 @@ export class ForumComponent implements OnInit {
   
     this.forumService.createPost(postData)
       .subscribe(() => {
-        // Publicación creada exitosamente
-        this.getPosts(); //Actualizar lista de publicaciones
-        this.title = ''; //Limpiar campos despues de crear publicacior
+        this.getPosts();
+        this.title = '';
         this.content = '';
       });
   }
@@ -43,8 +46,34 @@ export class ForumComponent implements OnInit {
   deletePost(postId: string): void {
     this.forumService.deletePost(postId)
       .subscribe(() => {
-        // Actualizar la lista de publicaciones después de eliminar
         this.getPosts();
       });
   }
+
+  editPost(post: Post): void {
+    this.editingPost = true;
+    this.editedPost = { ...post };
+  }
+
+  saveEditedPost(): void {
+    this.forumService.editPost(this.editedPost._id, this.editedPost)
+      .subscribe(() => {
+        this.editingPost = false;
+        this.getPosts();
+      });
+  }
+  
+  searchPosts(): void {
+  if (this.searchUsername) {
+    this.forumService.getPostsByUsername(this.searchUsername)
+      .subscribe(posts => this.posts = posts as Post[]);
+  } else if (this.searchPostId) {
+    this.forumService.getById(this.searchPostId)
+      .subscribe(posts => this.posts = [posts]); // Tratar como un objeto Post en un arreglo
+  } else {
+    this.getPosts();
+  }
+}
+
+  
 }

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Post {
+  _id: string;
   username: string;
   title: string;
   content: string;
@@ -13,9 +14,13 @@ export interface Post {
 })
 
 export class ForumService {
-  private baseUrl = 'http://localhost:3000/api/forum'; // URL backend
+  private baseUrl = 'https://usersproject-database.onrender.com/api/forum';
 
   constructor(private http: HttpClient) { }
+
+  createPost(postData: any) {
+    return this.http.post(`${this.baseUrl}/create`, postData);
+  }
 
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.baseUrl}/posts`);
@@ -25,8 +30,12 @@ export class ForumService {
     return this.http.get(`${this.baseUrl}/${username}`);
   }
 
-  createPost(postData: any) {
-    return this.http.post(`${this.baseUrl}/create`, postData);
+  getById(postId: string): Observable<Post> {
+    return this.http.get<Post>(`${this.baseUrl}/posts/${postId}`);
+  }
+  
+  editPost(postId: string, postData: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/edit/${postId}`, postData);
   }
 
   deletePost(postId: string) {

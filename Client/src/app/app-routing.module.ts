@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forum', component: ForumComponent },
+  { path: 'forum/posts/:id', component: ForumComponent},
   //{ path: 'auth', component: AuthComponent },
   { path: 'users', component: UsersComponent },
   { path: 'users/edit/:id', component: UsersEditComponent },
