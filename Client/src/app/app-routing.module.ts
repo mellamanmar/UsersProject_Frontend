@@ -18,10 +18,9 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/signup', pathMatch: 'full'},
+  { path: '', redirectTo: 'signup', pathMatch: 'full'},
   { path: 'signup', component: SignUpComponent },
   { path: 'signin', component: SigninComponent },
-
   { path: 'forum/posts', component: PostListComponent },
   { path: 'forum/posts/:id', component: PostDetailComponent },
   { path: 'forum/create', component: CreatePostComponent },

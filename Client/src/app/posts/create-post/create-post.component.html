@@ -1,10 +1,12 @@
 <h2>Crear una nueva publicación</h2>
 <form (ngSubmit)="createPost()">
-    <label>Title: </label>
-      <input type="text" name="title" required>
-      <br>
-    <label>Content: </label>
-      <textarea name="content" ngModel="postData." required></textarea>
-    <br>
-    <button type="submit">Create Post</button>
+  <label>Title: </label>
+  <input type="text" name="username" ngModel="postData.username" required>
+  <br>
+  <input type="text" name="title" ngModel="postData.title" required>
+  <br>
+  <label>Content: </label>
+  <textarea name="content" ngModel="postData.content" required></textarea>
+  <br>
+  <button type="submit">Create Post</button>
 </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
+import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 
 @Component({
@@ -16,7 +17,7 @@ export class CreatePostComponent implements OnInit {
     username: ''
   }
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService, private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -27,6 +28,6 @@ export class CreatePostComponent implements OnInit {
       tap ( postData =>{
         console.log(this.postData)
       })
-    ).subscribe()
+    ).subscribe(postData => this.router.navigate(['signin']))
   }
 }

@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class AppComponent implements OnInit {
 
-  public title = 'Client';
-	public page_title: string;
+  // public title = 'Client';
+	// public page_title: string;
 
 	constructor() {
-		this.page_title = 'Bienvenido al foro de programación Genius Botsitos';
+		// this.page_title = 'Bienvenido al foro de programación Genius Botsitos';
 	}
 
 	ngOnInit(): void {
