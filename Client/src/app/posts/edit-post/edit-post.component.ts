@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostService } from '../post.service';
+import { PostService } from '../../services/post.service';
 import { Post } from '../Post';
 
 @Component({
@@ -9,7 +9,8 @@ import { Post } from '../Post';
   styleUrls: ['./edit-post.component.css']
 })
 export class EditPostComponent implements OnInit {
-  post: Post = { _id: '', title: '', content: '' , username: ''}; // Instancia de Post
+
+  post = { _id: '', title: '', content: '' , username: ''}; // Instancia de Post
 
   constructor(
     private route: ActivatedRoute,
