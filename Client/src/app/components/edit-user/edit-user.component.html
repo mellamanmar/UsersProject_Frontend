@@ -1,0 +1,9 @@
+<p>edit-user works!</p>
+<div *ngFor="let user of users">
+  <div>
+    <h3>{{ user }}</h3>
+    <p>Email: {{ user.email }}</p>
+    <button (click)="editUser(user)">Editar</button>
+    <button (click)="deleteUser(user._id)">Eliminar</button>
+  </div>
+</div>
