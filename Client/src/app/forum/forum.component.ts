@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ForumService, Post } from './forum.service';
+import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-forum',
@@ -15,29 +18,47 @@ export class ForumComponent implements OnInit {
   searchUsername: string = '';
   searchPostId: string = '';
 
-  constructor(private forumService: ForumService) {}
+  postData = {
+    title: '',
+    content: '',
+    username: '',
+  }
+
+  constructor(private forumService: ForumService) { }
 
   ngOnInit(): void {
     this.getPosts();
   }
 
-  title: string = '';
-  content: string = '';
+  // title: string = '';
+  // content: string = '';
+  // username: string = '';
 
-  createPost(): void {
-    const postData = {
-      title: this.title,
-      content: this.content
-    };
-  
-    this.forumService.createPost(postData)
-      .subscribe(() => {
-        this.getPosts();
-        this.title = '';
-        this.content = '';
-      });
+  createPost() {
+    this.forumService.createPost(this.postData)
+    .pipe(tap(res => {console.log(res)})).subscribe()
   }
-  
+
+  // createPost(): void {
+  //   // const postData = {
+  //   //   title: this.title,
+  //   //   content: this.content,
+  //   //   username: this.username,
+
+  //   // };
+
+  //   this.forumService.createPost(this.postData)
+  //     .subscribe(() => {
+  //       this.getPosts();
+  //       this.postData.title = '';
+  //       this.postData.content = '';
+  //       this.postData.username = '';
+  //       res => {
+  //         console.log(res);
+  //       }
+  //     });
+  // }
+
   getPosts(): void {
     this.forumService.getPosts()
       .subscribe(posts => this.posts = posts);
@@ -62,18 +83,13 @@ export class ForumComponent implements OnInit {
         this.getPosts();
       });
   }
-  
-  searchPosts(): void {
-  if (this.searchUsername) {
-    this.forumService.getPostsByUsername(this.searchUsername)
-      .subscribe(posts => this.posts = posts as Post[]);
-  } else if (this.searchPostId) {
-    this.forumService.getById(this.searchPostId)
-      .subscribe(posts => this.posts = [posts]); // Tratar como un objeto Post en un arreglo
-  } else {
-    this.getPosts();
-  }
-}
 
-  
+  searchPosts(): void {
+    if (this.searchUsername) {
+      this.forumService.getPostsByUsername(this.searchUsername)
+        .subscribe(posts => this.posts = posts as Post[]);
+    } else {
+      this.getPosts();
+    }
+  }
 }

@@ -18,8 +18,8 @@ export class ForumService {
 
   constructor(private http: HttpClient) { }
 
-  createPost(postData: any) {
-    return this.http.post(`${this.baseUrl}/create`, postData);
+  createPost(postData: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/create`, postData);
   }
 
   getPosts(): Observable<Post[]> {

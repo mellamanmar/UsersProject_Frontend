@@ -1,8 +1,9 @@
 <h1>Foro</h1>
 <!-- Crear publicación -->
 <form (submit)="createPost()">
-  <input [(ngModel)]="title" name="title" placeholder="Título">
-  <textarea [(ngModel)]="content" name="content" placeholder="Contenido"></textarea>
+  <input [(ngModel)]="postData.username" name="username" placeholder="Username">
+  <input [(ngModel)]="postData.title" name="title" placeholder="Título">
+  <textarea [(ngModel)]="postData.content" name="content" placeholder="Contenido"></textarea>
   <button type="submit">Crear Publicación</button>
 </form>
 
