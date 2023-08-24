@@ -1,19 +1,38 @@
-@media (max-width: 600px) { 
-  body { 
-      width: 100%; 
-      padding: 10px; 
-  } 
-  form{ 
-      width: 100%; 
-      margin: 10px; 
-  } 
-} 
- 
-header { 
+
+@media only screen and (width: 390px) and (device-height: 1600px) and (-webkit-device-pixel-ratio: 3){
+  body{
+    width: 100%;
+    padding: 10%;
+  }
+  form{
+    width: 100%;
+    padding: 10%;
+  }
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  fill: #6500E3; 
+  color:#FFF; 
+  background-color: #6500E3; 
+  
+  
   width: 100%; 
-  position: fixed; 
-  z-index: 100; 
 } 
+header.h1{
+  font-family: Roboto; 
+  font-size: 20px; 
+  font-style: normal; 
+  font-weight: 700; 
+
+}
+
+main{
+  margin: 0;
+}
 body{ 
     margin: 0; 
     padding: 0; 
@@ -26,18 +45,31 @@ body{
   color:#FFF; 
   background-color: #6500E3; 
   display: flex; 
-  font-family: Roboto; 
-  font-size: 20px; 
-  font-style: normal; 
-  font-weight: 700; 
+  
   justify-content: center;  
   align-items: center; 
   width: 100vh; 
   height: 100px; 
 } 
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 38rem;
+  margin:auto;
+  
+  
+  
+}
+h2{
+  text-align: center;
+}
  
- 
-.formulario{ 
+/*.formulario{ 
     display: flex; 
     height: 550px; 
     flex-direction: column; 
@@ -46,10 +78,10 @@ body{
     gap: 5px; 
     margin-top: 0%;
     } 
- 
-    .user{ 
+ */
+.user{ 
     display: flex; 
-    padding: 40px; 
+    padding: 20px; 
     align-items: flex-start; 
     border-radius: 80px; 
     border: 1px solid #3C0286; 
@@ -87,8 +119,8 @@ body{
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    gap: 25px; 
-    align-self: stretch; 
+    gap: 15px; 
+    
 } 
  
 .botons2{ 
@@ -135,33 +167,37 @@ body{
 } 
  
 .container2{ 
-    height: 130px; 
+    height: 120px; 
     fill: #6500E3; 
     color: #fff; 
     background-color: #6500E3; 
     font-family: Roboto; 
-    font-size: 20px; 
+    font-size: 15px; 
     display: flex; 
     justify-content: center; /* Centrar horizontalmente */ 
     align-items: center; 
-    position: fixed; 
+    position: relative; 
     bottom: 0; 
     left: 0; 
-    width: 100%; 
+    width: auto; 
 } 
  
 .line2{ 
     z-index: 1; 
-    position: fixed; 
-    bottom: 0; 
-    width: 100%; 
+    position: absolute; 
+    width: auto;
+    margin-bottom: 70px;
+    
+    
 } 
+
  
 .line{ 
     z-index: 1; 
-    position: fixed; 
-    top: 0rem; 
-    width: 100%; 
+    position:absolute; 
+    width: auto; 
+    margin-top: 70px;
+    
 } 
  
  
@@ -176,17 +212,35 @@ body{
  
   } 
    
-  .toggle-buttons { 
+.toggle-buttons { 
     display: none; 
   } 
    
-  .image-button { 
-    cursor: pointer; 
-    display: block; 
-    display: flex; 
+.image-button { 
+    
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    gap: 10px;
+  } 
+.campo { 
+  cursor: pointer; 
+  display: block; 
+  display: flex;
+  align-items: center;
+  justify-content:center;
+
+.desple{
+  display: flex;
+  justify-content: left;
+
+}
+  
+  
+
   } 
    
-  .buttons-container { 
+.buttons-container { 
     display: none; 
     position: absolute; 
     background-color: white; 
@@ -197,7 +251,7 @@ body{
   } 
    
   /* Estilo de los botones en el contenedor */ 
-  .desplegar-option { 
+.desplegar-option { 
     display: block; 
     width: 100%; 
     padding: 10px; 
@@ -208,11 +262,13 @@ body{
   } 
    
   /* Cambiar el color al pasar el cursor por encima */ 
-  .desplegar-option:hover { 
+.desplegar-option:hover { 
     background-color: #d41414; 
   } 
    
   /* Mostrar los botones cuando el checkbox está marcado */ 
-  .toggle-buttons:checked ~ .buttons-container { 
+.toggle-buttons:checked ~ .buttons-container { 
     display: block; 
   }
+
+ 
