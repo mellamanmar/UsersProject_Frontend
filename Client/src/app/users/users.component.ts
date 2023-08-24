@@ -10,7 +10,7 @@ import { tap } from 'rxjs/operators';
 })
 export class UsersComponent implements OnInit{
 
-  user:any[]=[];
+  users:any[]=[];
 
   constructor(
     private usersService:UserService ) {}
@@ -21,11 +21,10 @@ export class UsersComponent implements OnInit{
 
   getUser(){
     this.usersService.getUsers()
-    .pipe(
-      tap (res => console.log(res))
-    )
-    .subscribe()
+    .subscribe( (users => {this.users = users
+      console.log (this.users)}
+      ))
   }
 
-  
+
 }
