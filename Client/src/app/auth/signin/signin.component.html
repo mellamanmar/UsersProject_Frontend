@@ -8,7 +8,7 @@
 
 <body>
   <section class="container">
-    <img src="./img/Virus.png" alt="Imagen de un virus">
+    <img src="../../../assets/img/Virus.png" alt="Imagen de un virus">
     <h1 class="tittle">GENIUS BOTSITOS</h1>
   </section>
   <div class="line">
@@ -40,18 +40,18 @@
 
   <div class="formulario">
     <h2 class="sesion">Iniciar Sesión</h2>
-    <img src="./img/Login.png" alt="logo de login" class="user">
-    <form>
+    <img src="../../../assets/img/Login.png" alt="logo de login" class="user">
+    <form (submit)="signIn()">
       <div class="botons">
         <div class="campo">
-          <input type="text" id="correo" name="correo" placeholder="Correo" class="enter">
+          <input type="text" [(ngModel)]="user.username" id="username" name="username" placeholder="Nombre de usuario" class="enter">
         </div>
         <div class="campo">
-          <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" class="enter">
+          <input type="password" [(ngModel)]="user.password" id="password" name="password" placeholder="Contraseña" class="enter">
         </div>
         <div class="botons2">
           <input type="submit" value="Ingresar" class="ingresar">
-          <input type="button" value="Registrarse" onclick="location.href='pagina_de_registro.html'"
+          <input type="button" value="Registrarse" onclick="location.href='signup'"
             class="registrarse">
         </div>
       </div>
