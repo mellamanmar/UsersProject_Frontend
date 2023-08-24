@@ -2,22 +2,14 @@
 <html>
 <head>
     <title>Mi Página con Imagen</title>
-    <link rel="stylesheet" type="text/css" href="forum.component.css">
+    <link rel="stylesheet" type="text/css" href="login.component.css">
 </head>
 <body>
-  <div class="container">
-
-    <div class="menu">
-     <img src="/Client/src/app/forum/img/Menu.png" alt="menu image">
-    </div>
-    <section class="tittle">
-    <img src="/Client/src/app/forum/img/Virus.png" alt="virus image">
-    <h1>GENIUS BOTSITOS</h1>
-   </section>
-
-
-  </div>
-   <div class="line">
+  <section class="container">
+    <img src="./img/Virus.png" alt="Imagen de un virus">
+    <h1 class="tittle">GENIUS BOTSITOS</h1>
+  </section>
+  <div class="line">
     <svg xmlns="http://www.w3.org/2000/svg" width="2000" height="50"
     viewBox="0 0 1440 33" fill="none">
         <path d="M0.441528 1.85257C54.2579 18.5703 108.074
@@ -48,8 +40,23 @@
     </svg>
 </div>
 
-
-
+<div class="formulario">
+  <h2 class="sesion">Iniciar Sesión</h2>
+  <img src="./img/Login.png" alt="logo de login" class="user">
+  <form>
+      <div class="botons">
+          <div class="campo">
+          <input type="text" id="correo" name="correo" placeholder="Correo" class="enter">
+          </div>
+          <div class="campo">
+          <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" class="enter">
+          </div>
+          <div class="botons2">
+          <input type="submit" value="Ingresar" class="ingresar">
+          <input type="button" value="Registrarse" onclick="location.href='pagina_de_registro.html'" class="registrarse">
+          </div>
+      </div>
+  </form>
   <div class="line2">
     <svg xmlns="http://www.w3.org/2000/svg" width="2000" height="50"
     viewBox="0 0 1440 33" fill="none">
@@ -77,10 +84,11 @@
         1076.78 3.09577 1130.6 1.98927C1184.42 0.883709
         1238.23 24.5847 1292.05 28.7196C1345.87 32.8536
         1399.68 17.4214 1453.5 1.98927"
-        stroke="rgb(187, 187, 187))" stroke-width="2"/>
+        stroke="rgb(187, 187, 187)" stroke-width="2"/>
       </svg>
   </div>
   <footer class="container2">Todos los derechos reservados</footer>
 
 </body>
 </html>
+
