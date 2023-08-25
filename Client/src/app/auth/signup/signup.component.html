@@ -120,21 +120,19 @@
         </div>
 
         <div class="campo">
-            <label for="lista">
-              <select name="userType" id="lista" [(ngModel)]="newUser.userType">
-                <option value="admin" class="desplegar-option">Admin</option>
-                <option value="user" class="desplegar-option">Usuario</option>
-              </select>
-            </label>
+          <label for="lista">Selecciona el tipo de usuario:</label>
+          <select name="userType" id="lista" [(ngModel)]="newUser.userType">
+            <option value="admin" class="desplegar-option">Admin</option>
+            <option value="user" class="desplegar-option">Usuario</option>
+          </select>
         </div>
+
         <div class="botons2">
           <button type="submit" class="registrarse">Registrarse</button>
-          <input type="button" value="Iniciar Sesión" onclick="location.href='http://localhost:4200/signin'"
-            class="ingresar">
+          <a href="http://localhost:4200/signin"><input type="button" value="Iniciar Sesión" class="ingresar"></a>
         </div>
       </div>
     </form>
-
   </main>
 
   <footer class="container2">Todos los derechos reservados

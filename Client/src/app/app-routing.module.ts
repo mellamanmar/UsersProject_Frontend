@@ -15,14 +15,14 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 
 const routes: Routes = [
-  { path: '', component: SigninComponent},
-  { path: 'signup', component: SignUpComponent },
-  { path: 'signin', component: SigninComponent },
+  { path: '', component: SignUpComponent },
+
   { path: 'forum/posts', component: PostListComponent },
   { path: 'forum/posts/:id', component: PostDetailComponent },
   { path: 'forum/create', component: CreatePostComponent },
   { path: 'forum/edit/:id', component: EditPostComponent },
   { path: 'forum/delete/:id', component: DeletePostComponent },
+  { path: 'users', component: UsersComponent },
   { path: 'users/edit/:id', component: UsersEditComponent },
   { path: 'user', component: UsersComponent },
   { path: 'edit', component: EditUserComponent },

@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './general/app.component';
 
-import { EditUserComponent } from './users/update/edit-user/edit-user.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignUpComponent } from './auth/signup/signup.component'
 import { UsersComponent } from './users/users.component';
@@ -23,15 +22,41 @@ import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 
+// Definir rutas
+
+const routes: Routes = [
+  { path: '', component: SignUpComponent },
+
+  { path: 'forum/posts', component: PostListComponent },
+  { path: 'forum/posts/:id', component: PostDetailComponent },
+  { path: 'forum/create', component: CreatePostComponent },
+  { path: 'forum/edit/:id', component: EditPostComponent },
+  { path: 'forum/delete/:id', component: DeletePostComponent },
+
+  // { path: 'forum', component: ForumComponent },
+  // { path: 'forum/posts/:id', component: ForumComponent},
+  // { path: 'forum/edit/:id', component: EditPostComponent },
+  // { path: 'auth', component: AuthComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'users/edit/:id', component: UsersEditComponent },
+
+  //{ path: 'forum/admin', component: ForumAdminComponent },
+
+  { path: 'signup', component: SignUpComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'user', component: UsersComponent },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
-    EditUserComponent,
     SigninComponent,
     SignUpComponent,
     UsersComponent,
     ForumComponent,
     UsersEditComponent,
+    SigninComponent,
+    SignUpComponent,
     PostsComponent,
     CreatePostComponent,
     PostListComponent,
