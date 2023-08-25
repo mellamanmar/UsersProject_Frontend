@@ -18,16 +18,20 @@ export class PostListComponent implements OnInit {
   constructor(private postService: PostService) {}
 
   ngOnInit(): void {
-
+    this.postList()
   }
 
-  postList() {
+  postList(){
     this.postService.getPosts()
-    .subscribe(posts => {this.posts = posts
-      console.log (this.posts)
-    })
-
+    .pipe(
+      tap (res => console.log(res))
+    )
+    .subscribe( posts => {
+      this.posts = posts;
+      })
   }
+
+
 
 //   postList () {
 //     this.postService.getPosts()

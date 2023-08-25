@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Mi Página con Imagen</title>
     <link rel="stylesheet" type="text/css" href="post-list.component.css">
 </head>
@@ -48,7 +49,7 @@
 
   <div class="fdiscusion">
     <h1 class="fdiscusion2">Foro de discusiòn</h1>
-    <input type="text" id="nuevoCampo" name="nuevoCampo" placeholder="Nuevo" class="fdiscusion3">
+    <a href="http://localhost:4200/forum/create"><input type="text" id="nuevoCampo" name="nuevoCampo" placeholder="Nuevo" class="fdiscusion3"></a>
   </div>
 
   <div class="coment">
@@ -56,14 +57,14 @@
       <div class="user-info">
         <img src="../../../assets/img/Login.png" alt="Usuario" class="photo">
         <div class="info">
-          <p class="username">{{posts}}</p>
+          <p class="username">AQUI </p>
         </div>
       </div>
       <div class="post-content">
         <ul>
-          <li *ngFor="let item of posts">
+          <!-- <li *ngFor="let item of posts">
             {{item.username}}
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
