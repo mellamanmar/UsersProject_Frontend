@@ -2,6 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
+export interface Post {
+  _id: string;
+  title: string;
+  content: string;
+  username: string;
+
+}
+
 @Injectable({
   providedIn: 'root'
 })

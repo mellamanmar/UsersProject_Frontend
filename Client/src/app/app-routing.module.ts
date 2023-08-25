@@ -5,7 +5,6 @@ import { LoginComponent } from './login/login.component';
 import { ForumComponent } from './forum/forum.component';
 //import { EditPostComponent } from './forum/edit-post/edit-post.component'; // Ajusta la ruta a la ubicación real de tu componente
 
-import { HomeComponent } from './home/home.component';
 //import { AuthComponent } from './auth/auth.component';
 import { UsersComponent } from './users/users.component';
 import { UsersEditComponent } from './users-edit/users-edit.component';
@@ -22,8 +21,7 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
 
   { path: 'forum/posts', component: PostListComponent },

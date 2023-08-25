@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+
 import { FormsModule } from '@angular/forms';
 
 import { EditUserComponent } from './users/update/edit-user/edit-user.component';
@@ -12,7 +13,6 @@ import { AppComponent } from './general/app.component';
 import { UsersComponent } from './users/users.component';
 import { ForumComponent } from './forum/forum.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
 import { UsersEditComponent } from './users-edit/users-edit.component';
 import { ForumAdminComponent } from './forum-admin/forum-admin.component';
 import { PostsComponent } from './forum/posts/posts.component';
@@ -25,8 +25,7 @@ import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 // Definir rutas
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
 
   { path: 'forum/posts', component: PostListComponent },
@@ -56,7 +55,6 @@ const routes: Routes = [
     UsersComponent,
     ForumComponent,
     LoginComponent,
-    HomeComponent,
     UsersEditComponent,
     ForumAdminComponent,
     SigninComponent,

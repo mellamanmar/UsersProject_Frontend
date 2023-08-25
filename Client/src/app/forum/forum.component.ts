@@ -38,6 +38,7 @@ export class ForumComponent implements OnInit {
     this.forumService.createPost(this.postData)
     .pipe(tap(res => {console.log(res)})).subscribe()
   }
+  
 
   // createPost(): void {
   //   // const postData = {
