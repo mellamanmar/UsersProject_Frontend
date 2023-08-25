@@ -22,21 +22,15 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-
+  { path: '', redirectTo: 'signup', pathMatch:'full' },
+  { path: 'signup', component: SignUpComponent },
+  { path: 'signin', component: SigninComponent },
   { path: 'forum/posts', component: PostListComponent },
   { path: 'forum/posts/:id', component: PostDetailComponent },
   { path: 'forum/create', component: CreatePostComponent },
   { path: 'forum/edit/:id', component: EditPostComponent },
   { path: 'forum/delete/:id', component: DeletePostComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'users/edit/:id', component: UsersEditComponent },
 
-  //{ path: 'forum/admin', component: ForumAdminComponent },
-
-  { path: 'signup', component: SignUpComponent },
-  { path: 'signin', component: SigninComponent },
   { path: 'user', component: UsersComponent },
   { path: 'edit', component: EditUserComponent },
 ];
