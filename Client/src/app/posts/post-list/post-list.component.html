@@ -50,8 +50,8 @@
     <h1 class="fdiscusion2">Foro de discusiòn</h1>
     <input type="text" id="nuevoCampo" name="nuevoCampo" placeholder="Nuevo" class="fdiscusion3">
   </div>
-  <div class="coment">
 
+  <div class="coment">
     <div class="post">
       <div class="user-info">
         <img src="../../../assets/img/Login.png" alt="Usuario" class="photo">
@@ -60,20 +60,15 @@
         </div>
       </div>
       <div class="post-content">
-        <ul class="post-content">
-          <li *ngFor="let post of posts">
-            {{post}}
+        <ul>
+          <li *ngFor="let item of posts">
+            {{item.username}}
           </li>
         </ul>
       </div>
     </div>
   </div>
 
-  <ul class="post-content">
-    <li *ngFor="let post of posts">
-      {{post}}
-    </li>
-  </ul>
   <div class="line2">
     <svg xmlns="http://www.w3.org/2000/svg" width="2000" height="50"
     viewBox="0 0 1440 33" fill="none">
