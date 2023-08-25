@@ -9,7 +9,7 @@ import { Post } from '../Post';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
-  post: Post = { _id: '', title: '', content: '', username: ''}; // Instancia de Post
+  post = { _id: '', title: '', content: '', username: ''}; // Instancia de Post
 
   constructor(
     private route: ActivatedRoute,

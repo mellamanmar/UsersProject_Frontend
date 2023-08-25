@@ -10,8 +10,8 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
-  getPosts(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/posts`);
+  getPosts(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/posts`);
   }
 
   getPostById(id: string): Observable<any> {

@@ -9,7 +9,6 @@ import { Post } from '../Post';
   styleUrls: ['./edit-post.component.css']
 })
 export class EditPostComponent implements OnInit {
-
   post = { _id: '', title: '', content: '' , username: ''}; // Instancia de Post
 
   constructor(

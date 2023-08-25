@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
-
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './general/app.component';
@@ -22,30 +20,6 @@ import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 
-// Definir rutas
-
-const routes: Routes = [
-  { path: '', component: SignUpComponent },
-
-  { path: 'forum/posts', component: PostListComponent },
-  { path: 'forum/posts/:id', component: PostDetailComponent },
-  { path: 'forum/create', component: CreatePostComponent },
-  { path: 'forum/edit/:id', component: EditPostComponent },
-  { path: 'forum/delete/:id', component: DeletePostComponent },
-
-  // { path: 'forum', component: ForumComponent },
-  // { path: 'forum/posts/:id', component: ForumComponent},
-  // { path: 'forum/edit/:id', component: EditPostComponent },
-  // { path: 'auth', component: AuthComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'users/edit/:id', component: UsersEditComponent },
-
-  //{ path: 'forum/admin', component: ForumAdminComponent },
-
-  { path: 'signup', component: SignUpComponent },
-  { path: 'signin', component: SigninComponent },
-  { path: 'user', component: UsersComponent },
-];
 
 @NgModule({
   declarations: [
@@ -65,13 +39,15 @@ const routes: Routes = [
     DeletePostComponent
 
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    RouterModule
+    FormsModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
