@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService, Post } from '../post.service';
-import { tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { PostService, Post } from '../../services/post.service';
+import { Router } from '@angular/router';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-create-post',
@@ -9,59 +9,26 @@ import { Observable } from 'rxjs';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent implements OnInit {
-  posts: Post[] = [];
-
-  editingPost: boolean = false;
-  editedPost: Post = { _id: '', username: '', title: '', content: '' };
-
-  searchUsername: string = '';
-  searchPostId: string = '';
 
   postData = {
+    _id: '',
     title: '',
     content: '',
-    username: '',
+    username: ''
   }
 
-  constructor(private forumService: PostService) { }
+  constructor(private postService: PostService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getPosts();
   }
-
-  // title: string = '';
-  // content: string = '';
-  // username: string = '';
 
   createPost() {
-    this.forumService.createPost(this.postData)
-    .pipe(tap(res => {console.log(res)})).subscribe()
-  }
-  
-
-  // createPost(): void {
-  //   // const postData = {
-  //   //   title: this.title,
-  //   //   content: this.content,
-  //   //   username: this.username,
-
-  //   // };
-
-  //   this.forumService.createPost(this.postData)
-  //     .subscribe(() => {
-  //       this.getPosts();
-  //       this.postData.title = '';
-  //       this.postData.content = '';
-  //       this.postData.username = '';
-  //       res => {
-  //         console.log(res);
-  //       }
-  //     });
-  // }
-
-  getPosts(): void {
-    this.forumService.getPosts()
-      .subscribe(posts => this.posts = posts);
+    this.postService.createPost(this.postData)
+    .pipe(
+      tap ( postData =>{
+        console.log(this.postData)
+      })
+    ).subscribe(postData => this.router.navigate(['signin']))
   }
 
   // deletePost(postId: string): void {
@@ -238,3 +205,4 @@ export class CreatePostComponent implements OnInit {
 // // //       });
 // // //   }
 // // // }
+ 

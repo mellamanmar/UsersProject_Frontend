@@ -37,7 +37,6 @@ export class SignUpComponent implements OnInit{
       .pipe(
         tap (res =>{
           console.log(res)
-
         })
     ).subscribe(res => {localStorage.setItem('token', res.token)
         this.router.navigate(['signin'])})

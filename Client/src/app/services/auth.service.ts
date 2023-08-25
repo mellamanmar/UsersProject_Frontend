@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   private URL = 'https://usersproject-database.onrender.com/api'
+
   constructor( private http:HttpClient ) { }
 
   signUpUser(newUser: any): Observable<any>{
