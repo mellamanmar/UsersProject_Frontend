@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { EditUserComponent } from './users/update/edit-user/edit-user.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignUpComponent } from './auth/signup/signup.component'
 import { AppRoutingModule } from './app-routing.module';
@@ -47,7 +46,6 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'user', component: UsersComponent },
-  { path: 'edit', component: EditUserComponent },
 ];
 
 @NgModule({
@@ -61,7 +59,6 @@ const routes: Routes = [
     ForumAdminComponent,
     SigninComponent,
     SignUpComponent,
-    EditUserComponent,
     PostsComponent,
     CreatePostComponent,
     PostListComponent,

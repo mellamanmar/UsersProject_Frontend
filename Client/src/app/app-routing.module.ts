@@ -24,18 +24,12 @@ import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
 
   { path: 'forum/posts', component: PostListComponent },
   { path: 'forum/posts/:id', component: PostDetailComponent },
   { path: 'forum/create', component: CreatePostComponent },
   { path: 'forum/edit/:id', component: EditPostComponent },
   { path: 'forum/delete/:id', component: DeletePostComponent },
-
-  // { path: 'forum', component: ForumComponent },
-  // { path: 'forum/posts/:id', component: ForumComponent},
-  // { path: 'forum/edit/:id', component: EditPostComponent },
-  // { path: 'auth', component: AuthComponent },
   { path: 'users', component: UsersComponent },
   { path: 'users/edit/:id', component: UsersEditComponent },
 
