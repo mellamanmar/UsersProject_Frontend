@@ -16,7 +16,6 @@ import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 
 const routes: Routes = [
   { path: '', component: SignUpComponent },
-
   { path: 'forum/posts', component: PostListComponent },
   { path: 'forum/posts/:id', component: PostDetailComponent },
   { path: 'forum/create', component: CreatePostComponent },
