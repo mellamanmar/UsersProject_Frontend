@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ForumComponent } from './forum/forum.component';
-import { UsersComponent } from './users/users.component';
+import { UsersComponent } from './users/profile/users.component';
 import { ForumListComponent } from './forum-list/forum-list.component';
 import { ForumFormComponent } from './forum-form/forum-form.component';
 import { Routes,RouterModule } from '@angular/router';
@@ -14,7 +14,7 @@ const routes:Routes=[
   {path:'', redirectTo:'/register',pathMatch:'full'  }, 
   {path:'register',component:RegisterComponent}, 
   {path:'register/user',component:UsersComponent}, 
-  {path:'register/user/:id',component:RegisterComponent}, 
+  {path:'register/edit',component:RegisterComponent}, 
  
 ]
 

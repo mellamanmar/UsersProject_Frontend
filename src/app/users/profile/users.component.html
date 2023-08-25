@@ -63,70 +63,37 @@
 	</header>
 
 	<main>
-        
-
-		<form>
-			<h2 class="sesion" *ngIf="!user.id else elseBlock">Crear Cuenta</h2>
-            <ng-template #elseBlock>
-                <h2 class="sesion">Actualizar Cuenta</h2>
-            </ng-template>
-
-            <div class="user">
-			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                <path d="M12.9031 12.1377C14.5599 12.1377 15.9031 10.7945 15.9031 9.1377C15.9031 7.48084 14.5599 6.1377 12.9031 6.1377C11.2462 6.1377 9.90308 7.48084 9.90308 9.1377C9.90308 10.7945 11.2462 12.1377 12.9031 12.1377Z" stroke="#3C0286" stroke-width="1.5"/>
-                <path d="M12.9031 22.1377C18.4259 22.1377 22.9031 17.6605 22.9031 12.1377C22.9031 6.61485 18.4259 2.1377 12.9031 2.1377C7.38023 2.1377 2.90308 6.61485 2.90308 12.1377C2.90308 17.6605 7.38023 22.1377 12.9031 22.1377Z" stroke="#3C0286" stroke-width="1.5"/>
-                <path d="M18.8722 20.1377C18.7131 17.2462 17.8278 15.1377 12.903 15.1377C7.97829 15.1377 7.09299 17.2462 6.93384 20.1377" stroke="#3C0286" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <br>
-			<div class="botons">
-				<div class="campo">
-					<input type="email" id="correo" name="correo" placeholder="Correo" class="enter" [(ngModel)]="user.email">
-					
-				</div>
-
-				<div class="campo">
-					<input type="text" id="usuario" name="username" placeholder="Usuario" class="enter" [(ngModel)]="user.username">
-					
-					
-				</div>
-				<div class="campo">
-					<input type="password" id="contraseña" name="password" placeholder="Contraseña" class="enter" [(ngModel)]="user.password">
-					
-					
-				</div>
-				<div class="campo">
-					<!--<input  id="tipoUsuario" name="correo" placeholder="Tipo usuario" class="enter" > -->
-					<div class="boton-desplegable">
-						<input type="checkbox" id="toggle-buttons" class="toggle-buttons">
-
-                        <div class="desple">
-						<label for="toggle-buttons" class="image-button"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none" class="desple">
-                                <path d="M12.4031 22.1377C17.9259 22.1377 22.4031 17.6605 22.4031 12.1377C22.4031 6.61485 17.9259 2.1377 12.4031 2.1377C6.88023 2.1377 2.40308 6.61485 2.40308 12.1377C2.40308 17.6605 6.88023 22.1377 12.4031 22.1377Z" stroke="#6500E3" stroke-width="1.5"/>
-                                <path d="M15.4031 10.6377L12.4031 13.6377L9.40308 10.6377" stroke="#6500E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg>
-                        </label>
-                        </div>
-						<select  class="campo" class="buttons-container">
-							<option class="campo" value="Admin" class="desplegar-option">Admin</option>
-							<option class="campo" value="Usuario" class="desplegar-option">Usuario</option>
-						</select>
-					</div>
-				</div>
-				<div class="botons2">
-					<button role="button" class="ingresar" (click)='create()' *ngIf="!user.id else elseBlock">Registrarse</button>
-                    <ng-template #elseBlock>
-                        <button type="submit" class="ingresar" (click)='update()'>Actualizar</button>
-                    </ng-template>
-					<input type="button" value="Iniciar Sesión" onclick="location.href='pagina_de_registro.html'" class="registrarse">
-
-				</div>
-                
-			</div>
-		</form>
+   
+      <button class="ingresar" type="button" [routerLink]="['/register']">Crear Cuenta</button>
     
-
+    <div class="titulo" >
+      <h1 class="sesion">{{titulo}}</h1>
+    </div>
+    <div class="tabla">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Password</th>
+            <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td><button type="button" name="button" class="btn btn-outline-primary" [routerLink]="['/register/edit']" >Editar</button></td>
+            <td><button class="btn btn-outline-danger" > Eliminar </button></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
 
 	</main>
 	<footer class="container2">Todos los derechos reservados

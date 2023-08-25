@@ -1,0 +1,128 @@
+@media only screen and (width: 390px) and (device-height: 1600px) and (-webkit-device-pixel-ratio: 3){
+    body{
+      width: 100%;
+      padding: 10%;
+    }
+    form{
+      width: 100%;
+      padding: 10%;
+    }
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    fill: #6500E3; 
+    color:#FFF; 
+    background-color: #6500E3; 
+    
+    
+    width: 100%; 
+  } 
+  header.h1{
+    font-family: Roboto; 
+    font-size: 20px; 
+    font-style: normal; 
+    font-weight: 700; 
+  
+  }
+  
+  main{
+    margin: 0;
+  }
+  body{ 
+      margin: 0; 
+      padding: 0; 
+  } 
+   
+.sesion{ 
+    color: #1C003F; 
+    font-family: Roboto; 
+    font-size: 24px; 
+    font-style: normal; 
+    font-weight: 700; 
+    line-height: normal; 
+    margin-top: 2rem; 
+} 
+.ingresar{ 
+    display: flex; 
+    padding: 15px 50px; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    display: flex; 
+    border-radius: 50px; 
+    border: 1px solid #1C003F; 
+    background: #6500E3; 
+    color: #FFF; 
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    font-family: Roboto; 
+    font-size: 16px; 
+    font-weight: 600; 
+    line-height: normal; 
+    margin-top: 2rem;
+    margin-left: 2rem;
+} 
+ 
+   
+  .container { 
+    fill: #6500E3; 
+    color:#FFF; 
+    background-color: #6500E3; 
+    display: flex; 
+    
+    justify-content: center;  
+    align-items: center; 
+    width: 100vh; 
+    height: 100px; 
+  } 
+
+  
+.container2{ 
+    height: 120px; 
+    fill: #6500E3; 
+    color: #fff; 
+    background-color: #6500E3; 
+    font-family: Roboto; 
+    font-size: 15px; 
+    display: flex; 
+    justify-content: center; /* Centrar horizontalmente */ 
+    align-items: center; 
+    position: relative; 
+    bottom: 0; 
+    left: 0; 
+    width: auto; 
+} 
+ 
+.line2{ 
+    z-index: 1; 
+    position: absolute; 
+    width: auto;
+    margin-bottom: 70px;
+    
+    
+} 
+
+ 
+.line{ 
+    z-index: 1; 
+    position:absolute; 
+    width: auto; 
+    margin-top: 70px;
+    
+} 
+
+.titulo{
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.tabla{
+  margin: 3rem;
+  margin-left: 20rem;
+  width: 50%;
+}
