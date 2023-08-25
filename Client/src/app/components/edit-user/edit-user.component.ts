@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -18,6 +18,7 @@ export class EditUserComponent implements OnInit {
   loadUsers() {
     this.userService.getUsers().subscribe(users => {
       this.users = users;
+      console.log(users)
     });
   }
 

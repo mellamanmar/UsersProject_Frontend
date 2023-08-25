@@ -1,1 +1,42 @@
-<p>forum works!</p>
+<h1>Foro</h1>
+<!-- Crear publicación -->
+<form (submit)="createPost()">
+  <input [(ngModel)]="postData.username" name="username" placeholder="Username">
+  <input [(ngModel)]="postData.title" name="title" placeholder="Título">
+  <textarea [(ngModel)]="postData.content" name="content" placeholder="Contenido"></textarea>
+  <button type="submit">Crear Publicación</button>
+</form>
+
+<!-- Filtros de búsqueda -->
+<div>
+  <label for="searchUsername">Buscar por Nombre de Usuario:</label>
+  <input type="text" [(ngModel)]="searchUsername" name="searchUsername" id="searchUsername">
+  <button (click)="searchPosts()">Buscar</button>
+</div>
+<div>
+  <label for="searchPostId">Buscar por ID de Publicación:</label>
+  <input type="text" [(ngModel)]="searchPostId" name="searchPostId" id="searchPostId">
+  <button (click)="searchPosts()">Buscar</button>
+</div>
+
+<!-- Lista de publicaciones -->
+<div *ngFor="let post of posts">
+  <div class="post">
+    <h2>{{ post.title }}</h2>
+    <h4>ID: {{ post._id }}</h4>
+    <p>Publicado por: {{ post.username }}</p>
+    <p>{{ post.content }}</p>
+    <button (click)="deletePost(post._id)">Eliminar</button>
+    <button (click)="editPost(post)">Editar</button>
+  </div>
+</div>
+
+<!-- Formulario de edición -->
+<div *ngIf="editingPost">
+  <h2>Editar Publicación</h2>
+  <form (submit)="saveEditedPost()">
+    <input [(ngModel)]="editedPost.title" name="editedTitle" placeholder="Título">
+    <textarea [(ngModel)]="editedPost.content" name="editedContent" placeholder="Contenido"></textarea>
+    <button type="submit">Guardar</button>
+  </form>
+</div>

@@ -1,0 +1,7 @@
+<h2>Borrar publicación</h2>
+<div *ngIf="post">
+  <h3>¿Estás seguro de que deseas eliminar la publicación?</h3>
+  <p>Title: {{ post.title }}</p>
+  <p>Content: {{ post.content }}</p>
+  <button (click)="deletePost()">Eliminar</button>
+</div>
