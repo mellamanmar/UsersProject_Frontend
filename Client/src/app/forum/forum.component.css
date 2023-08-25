@@ -27,6 +27,72 @@ body{
   margin-left: -22rem;
 }
 
+.fdiscusion{
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  justify-content: space-around;
+}
+
+.fdiscusion2{
+  color: #363636;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.fdiscusion3{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid #1C003F;
+  background: #6500E3;
+  padding-top: 8px;
+}
+
+input[placeholder="Nuevo"]::placeholder {
+  color: white; /* Cambia el color del texto del placeholder */
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo{
+  display: flex;
+  padding: 35px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 50px;
+  border: 1px solid #3C0286;
+  background: #C18FFF;
+  margin-right: 2rem;
+}
+
+.user-info{
+  display: flex;
+}
+
+.coment{
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 5px;
+  border: 1px solid #7214e5;
+  width: 117vh;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;
+  margin-left: 18.5rem;
+  margin-top: 3rem;
+}
+
+.post-content{
+  margin-top: 2rem;
+}
+
 .container2{
   height: 135px;
   fill: #6500E3;
