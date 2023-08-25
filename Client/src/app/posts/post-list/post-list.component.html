@@ -62,12 +62,18 @@
       <div class="post-content">
         <ul class="post-content">
           <li *ngFor="let post of posts">
-            {{post.username}}
+            {{post}}
           </li>
         </ul>
       </div>
     </div>
   </div>
+
+  <ul class="post-content">
+    <li *ngFor="let post of posts">
+      {{post}}
+    </li>
+  </ul>
   <div class="line2">
     <svg xmlns="http://www.w3.org/2000/svg" width="2000" height="50"
     viewBox="0 0 1440 33" fill="none">
