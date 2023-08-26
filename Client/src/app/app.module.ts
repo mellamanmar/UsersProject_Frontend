@@ -11,10 +11,7 @@ import { AppComponent } from './general/app.component';
 import { UsersComponent } from './users/users.component';
 import { ForumComponent } from './forum/forum.component';
 import { HomeComponent } from './home/home.component';
-import { UsersEditComponent } from './users-edit/users-edit.component';
-import { ForumAdminComponent } from './forum-admin/forum-admin.component';
 import { PostsComponent } from './forum/posts/posts.component';
-import { CreatePostComponent } from './forum/create-post/create-post.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
@@ -27,12 +24,9 @@ import { DeletePostComponent } from './posts/delete-post/delete-post.component';
     UsersComponent,
     ForumComponent,
     HomeComponent,
-    UsersEditComponent,
-    ForumAdminComponent,
     SigninComponent,
     SignUpComponent,
     PostsComponent,
-    CreatePostComponent,
     PostListComponent,
     PostDetailComponent,
     EditPostComponent,
