@@ -1,24 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-
-import { ForumComponent } from './forum/forum.component';
-//import { EditPostComponent } from './forum/edit-post/edit-post.component'; // Ajusta la ruta a la ubicación real de tu componente
-
-import { HomeComponent } from './home/home.component';
-//import { AuthComponent } from './auth/auth.component';
 import { UsersComponent } from './users/users.component';
-import { UsersEditComponent } from './users-edit/users-edit.component';
-import { ForumAdminComponent } from './forum-admin/forum-admin.component';
-
 import { SignUpComponent } from './auth/signup/signup.component'
 import { SigninComponent } from './auth/signin/signin.component'
-
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { DeletePostComponent } from './posts/delete-post/delete-post.component';
+import { AuthGuard } from './auth.guard';
+import { EditComponent } from './users/user-edit/edit/edit.component';
+import { EditUserComponent } from './users/user-edit/edit-user/edit-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signup', pathMatch:'full' },
@@ -31,6 +23,8 @@ const routes: Routes = [
   { path: 'forum/delete/:id', component: DeletePostComponent },
 
   { path: 'user', component: UsersComponent },
+  { path: 'edit', component: EditComponent, canActivate: [AuthGuard] },
+  { path: 'edit/user/:id', component: EditUserComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
