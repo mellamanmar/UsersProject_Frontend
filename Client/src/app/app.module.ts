@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './general/app.component';
 import { UsersComponent } from './users/users.component';
 import { ForumComponent } from './forum/forum.component';
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UsersEditComponent } from './users-edit/users-edit.component';
 import { ForumAdminComponent } from './forum-admin/forum-admin.component';
@@ -27,7 +26,6 @@ import { DeletePostComponent } from './posts/delete-post/delete-post.component';
     AppComponent,
     UsersComponent,
     ForumComponent,
-    LoginComponent,
     HomeComponent,
     UsersEditComponent,
     ForumAdminComponent,
