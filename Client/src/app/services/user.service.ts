@@ -1,25 +1,37 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, firstValueFrom } from 'rxjs';
+import { User } from 'app/users/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private URL: string;
+  private httpClient = inject(HttpClient);
 
-  private URL = 'https://usersproject-database.onrender.com/api'; // Cambiar la URL según tu configuración backend
+  constructor() { this.URL ='https://usersproject-database.onrender.com/api'}
 
-  constructor(private http: HttpClient) { }
+  getUsers() {
+    const httpOptions : Object =
+    {headers: new HttpHeaders ({
+      'Bearer':localStorage.getItem('token')!
+    })}
 
-  getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(this.URL + '/users');
+    return firstValueFrom (
+      this.httpClient.get<any[]>(this.URL + '/users', httpOptions )
+    )
   }
 
-  editUser(userId: string, userData: any): Observable<any> {
-    return this.http.put<any>(`${this.URL}/edit/${userId}`, userData);
+  editUser(userId: string, userData: any) {
+    return this.httpClient.put<any>(`${this.URL}/edit/${userId}`, userData);
   }
 
   deleteUser(userId: string): Observable<any> {
-    return this.http.delete<any>(`${this.URL}/${userId}`);
+    return this.httpClient.delete<any>(`${this.URL}/${userId}`);
+  }
+
+  createHeaders() {
+    return {    }
   }
 }

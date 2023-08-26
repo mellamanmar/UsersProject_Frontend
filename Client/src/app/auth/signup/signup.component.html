@@ -87,7 +87,7 @@
   </header>
 
   <main>
-    <form (submit)="signUp()">
+    <form [formGroup]="formulario" (ngSubmit)="signUp()">
       <h2 class="sesion">Crear Cuenta</h2>
       <div class="user">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -105,23 +105,23 @@
       <br>
       <div class="botons">
         <div class="campo">
-          <input type="email" [(ngModel)]="newUser.email" id="email" name="email" placeholder="Correo" class="enter"
+          <input type="email" formControlName="email" id="email" name="email" placeholder="Correo" class="enter"
             required>
         </div>
 
         <div class="campo">
-          <input type="text" [(ngModel)]="newUser.username" id="username" name="username" placeholder="Usuario"
+          <input type="text" formControlName="username" id="username" name="username" placeholder="Usuario"
             class="enter" required>
         </div>
 
         <div class="campo">
-          <input type="password" [(ngModel)]="newUser.password" id="password" name="password" placeholder="Contraseña"
+          <input type="password" formControlName="password" id="password" name="password" placeholder="Contraseña"
             class="enter" required>
         </div>
 
         <div class="campo">
             <label for="lista">
-              <select name="userType" id="lista" [(ngModel)]="newUser.userType">
+              <select name="userType" id="lista" formControlName="userType">
                 <option value="admin" class="desplegar-option">Admin</option>
                 <option value="user" class="desplegar-option">Usuario</option>
               </select>

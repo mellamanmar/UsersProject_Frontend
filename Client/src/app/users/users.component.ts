@@ -16,16 +16,13 @@ export class UsersComponent implements OnInit{
     private usersService:UserService ) {}
 
   ngOnInit(): void {
-      this.getUser();
   }
 
   getUser(){
     this.usersService.getUsers()
-    .pipe(
-      tap (res => console.log(res))
-    )
-    .subscribe()
+    .then( user => { console.log(user)})
+    .catch(error => console.error())
   }
 
-  
+
 }

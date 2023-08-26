@@ -12,7 +12,6 @@ import { UsersEditComponent } from './users-edit/users-edit.component';
 import { ForumAdminComponent } from './forum-admin/forum-admin.component';
 
 import { SignUpComponent } from './auth/signup/signup.component'
-import { EditUserComponent } from './components/edit-user/edit-user.component'
 import { SigninComponent } from './auth/signin/signin.component'
 
 import { PostListComponent } from './posts/post-list/post-list.component';
@@ -32,7 +31,6 @@ const routes: Routes = [
   { path: 'forum/delete/:id', component: DeletePostComponent },
 
   { path: 'user', component: UsersComponent },
-  { path: 'edit', component: EditUserComponent },
 ];
 
 @NgModule({

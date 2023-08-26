@@ -41,13 +41,13 @@
   <div class="formulario">
     <h2 class="sesion">Iniciar Sesión</h2>
     <img src="../../../assets/img/Login.png" alt="logo de login" class="user">
-    <form (submit)="signIn()">
+    <form [formGroup]="formulario" (ngSubmit)="signIn()">
       <div class="botons">
         <div class="campo">
-          <input type="text" [(ngModel)]="user.username" id="username" name="username" placeholder="Nombre de usuario" class="enter">
+          <input type="text" formControlName="username" id="username" name="username" placeholder="Nombre de usuario" class="enter">
         </div>
         <div class="campo">
-          <input type="password" [(ngModel)]="user.password" id="password" name="password" placeholder="Contraseña" class="enter">
+          <input type="password" formControlName="password" id="password" name="password" placeholder="Contraseña" class="enter">
         </div>
         <div class="botons2">
           <input type="submit" value="Ingresar" class="ingresar">
