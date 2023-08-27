@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'forum/edit/:id', component: EditPostComponent },
   { path: 'forum/delete/:id', component: DeletePostComponent },
   { path: 'user', component: UsersComponent },
+  {path: 'forum', component: ForumComponent},
 ];
 
 @NgModule({

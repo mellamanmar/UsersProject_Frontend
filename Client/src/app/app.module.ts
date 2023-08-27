@@ -11,7 +11,6 @@ import { AppComponent } from './general/app.component';
 import { UsersComponent } from './users/users.component';
 import { ForumComponent } from './forum/forum.component';
 import { HomeComponent } from './home/home.component';
-import { PostsComponent } from './forum/posts/posts.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
@@ -26,7 +25,6 @@ import { DeletePostComponent } from './posts/delete-post/delete-post.component';
     HomeComponent,
     SigninComponent,
     SignUpComponent,
-    PostsComponent,
     PostListComponent,
     PostDetailComponent,
     EditPostComponent,

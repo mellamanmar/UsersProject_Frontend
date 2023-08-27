@@ -3,6 +3,7 @@ import { PostService } from '../../services/post.service';
 import { Post } from '../Post';
 import { catchError } from 'rxjs/operators';
 import { tap } from 'rxjs/operators';
+import { ForumService } from '../../forum/forum.service'
 
 
 @Component({
@@ -13,22 +14,17 @@ import { tap } from 'rxjs/operators';
 
 export class PostListComponent implements OnInit {
 
-  posts: any [] = []
+  posts: Post[] = [];
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService, private forumService: ForumService) {}
 
   ngOnInit(): void {
-    this.postList()
+    this.getPosts()
   }
 
-  postList(){
+  getPosts(): void {
     this.postService.getPosts()
-    .pipe(
-      tap (res => console.log(res))
-    )
-    .subscribe( posts => {
-      this.posts = posts;
-      })
+      .subscribe(posts => this.posts = posts);
   }
 
 
