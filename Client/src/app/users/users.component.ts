@@ -23,6 +23,4 @@ export class UsersComponent implements OnInit{
     .then( user => { console.log(user)})
     .catch(error => console.error())
   }
-
-
 }

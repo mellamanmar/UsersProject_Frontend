@@ -21,7 +21,6 @@ const routes: Routes = [
   { path: 'forum/create', component: CreatePostComponent },
   { path: 'forum/edit/:id', component: EditPostComponent },
   { path: 'forum/delete/:id', component: DeletePostComponent },
-
   { path: 'user', component: UsersComponent },
   { path: 'edit', component: EditComponent, canActivate: [AuthGuard] },
   { path: 'edit/user/:id', component: EditUserComponent, canActivate: [AuthGuard] }
