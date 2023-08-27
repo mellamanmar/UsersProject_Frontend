@@ -1,12 +1,6 @@
 @media only screen and (width: 390px) and (device-height: 1600px) and (-webkit-device-pixel-ratio: 3) {
-
-  html,
   body {
     width: 100%;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    height: 100%;
   }
 
   form {
@@ -19,70 +13,29 @@
   font-family: Roboto;
 }
 
-h2 {
-  text-align: center;
-  font-size: 25px;
-  font-style: normal;
-}
-
-h1 {
-  font-size: 30px;
-  font-style: normal;
-  text-align: center;
-}
-/* header style */
-.header {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 100%;
-  box-shadow: none;
-  background-color: #6500E3;
-  position: fixed;
-  height: 60px !important;
-  overflow: hidden;
-  z-index: 10;
+header {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 120px;
+  color: #FFF;
+  background-color: #6500E3;
+  width: 100%;
 }
 
-.main {
-  margin: 0 auto;
-  display: block;
-  height: 100%;
-  float: left;
-  margin-top: 3px;
+header h1 {
+  font-size: 30px;
+  font-style: normal;
 }
-.diagonal.part-1 {
-  position: relative;
-  transition: all 0.3s;
-  box-sizing: border-box;
-  float: left;
+
+main {
+  margin: 0;
 }
-.diagonal.part-2 {
-  transition: all 0.3s;
-  box-sizing: border-box;
-  position: relative;
-  float: left;
-  margin-top: 3px;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
-  transition: all 0.3s;
-  box-sizing: border-box;
-  opacity: 0;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
-  transition: all 0.3s;
-  box-sizing: border-box;
-  transform: rotate(135deg);
-  margin-top: 8px;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
-  transition: all 0.3s;
-  box-sizing: border-box;
-  transform: rotate(-135deg);
-  margin-top: -9px;
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -90,201 +43,204 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 100px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.user {
+  display: flex;
+  padding: 20px;
+  align-items: flex-start;
+  border-radius: 80px;
+  border: 1px solid #3C0286;
+  background: #C18FFF;
+}
+
+.sesion {
+  color: #1C003F;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 2rem;
+}
+
+.enter {
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+  gap: 15px;
+  align-self: stretch;
+  border-radius: 50px;
+  border: 1px solid #6500E3;
+  background: #FFF;
+  color: #363636;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.botons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.botons2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  align-self: stretch;
+  margin-bottom: 1rem;
+  width: 1rem;
+
+}
+
+.ingresar {
+  display: flex;
+  padding: 15px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  border-radius: 50px;
+  border: 1px solid #1C003F;
+  background: #6500E3;
+  color: #FFF;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.registrarse {
+  display: flex;
+  padding: 10px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+  border: 1px solid #3C0286;
+  background: #E6D1FF;
+  color: #3C0286;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.container2 {
+  height: 120px;
+  fill: #6500E3;
+  color: #fff;
+  background-color: #6500E3;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: auto;
+}
+
+.line2 {
+  z-index: 1;
+  position: absolute;
+  width: auto;
+  margin-bottom: 70px;
+}
+
 .line {
   display: flex;
   z-index: 1;
   position: absolute;
-  width: auto;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 128px;
   max-width: 100%;
-  height: 20px;
+  height: 50px;
 }
-  .container {
+
+/* Estilos generales */
+.boton-desplegable {
+  position: relative;
+  display: inline-block;
+}
+
+.toggle-buttons {
+  display: none;
+}
+
+.image-button {
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.campo {
+  cursor: pointer;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 2rem;
+
+  .desple {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .user {
-    display: flex;
-    padding: 20px;
-    align-items: flex-start;
-    border-radius: 80px;
-    border: 1px solid #3C0286;
-    background: #C18FFF;
-  }
-
-  .sesion {
-    color: #1C003F;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-top: 2rem;
-  }
-
-  .enter {
-    display: flex;
-    padding: 15px 20px;
-    align-items: center;
-    gap: 15px;
-    align-self: stretch;
-    border-radius: 50px;
-    border: 1px solid #6500E3;
-    background: #FFF;
-    color: #363636;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .botons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    justify-content: left;
 
   }
+}
 
-  .botons2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    align-self: stretch;
-    margin-bottom: 1rem;
-    width: 1rem;
-  }
+.buttons-container {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
 
-  .ingresar {
-    display: flex;
-    padding: 15px 50px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    display: flex;
-    border-radius: 50px;
-    border: 1px solid #1C003F;
-    background: #6500E3;
-    color: #FFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: normal;
-  }
+/* Estilo de los botones en el contenedor */
+.desplegar-option {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+}
 
-  .registrarse {
-    display: flex;
-    padding: 10px 50px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 50px;
-    border: 1px solid #3C0286;
-    background: #E6D1FF;
-    color: #3C0286;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
+/* Cambiar el color al pasar el cursor por encima */
+.desplegar-option:hover {
+  background-color: #d41414;
+}
 
-  .container2 {
-    height: 120px;
-    fill: #6500E3;
-    color: #fff;
-    background-color: #6500E3;
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-    /* Centrar horizontalmente */
-    align-items: center;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: auto;
-  }
+/* Mostrar los botones cuando el checkbox está marcado */
+.toggle-buttons:checked~.buttons-container {
+  display: block;
+}
 
-
-  /* Estilos generales */
-  .boton-desplegable {
-    position: relative;
-    display: inline-block;
-  }
-
-  .toggle-buttons {
-    display: none;
-  }
-
-  .image-button {
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .campo {
-    cursor: pointer;
-    display: block;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1rem;
-    height: 2rem;
-
-    .desple {
-      display: flex;
-      justify-content: left;
-
-    }
-  }
-
-  .buttons-container {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    top: 100%;
-    left: 0;
-  }
-
-  /* Estilo de los botones en el contenedor */
-  .desplegar-option {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    display: flex;
-  }
-
-  /* Cambiar el color al pasar el cursor por encima */
-  .desplegar-option:hover {
-    background-color: #d41414;
-  }
-
-  /* Mostrar los botones cuando el checkbox está marcado */
-  .toggle-buttons:checked~.buttons-container {
-    display: block;
-  }
-
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}
