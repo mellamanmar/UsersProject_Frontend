@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignUpComponent } from './auth/signup/signup.component'
@@ -17,6 +17,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { DeletePostComponent } from './posts/delete-post/delete-post.component';
+
 
 
 
