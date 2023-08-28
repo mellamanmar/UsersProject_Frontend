@@ -49,6 +49,14 @@
         <div class="campo">
           <input type="password" formControlName="password" id="password" name="password" placeholder="Contraseña" class="enter">
         </div>
+        <div class="campo">
+          <label for="lista">
+            <select name="userType" id="lista" formControlName="userType">
+              <option value="admin" class="desplegar-option">Admin</option>
+              <option value="user" class="desplegar-option">Usuario</option>
+            </select>
+          </label>
+      </div>
         <div class="botons2">
           <input type="submit" value="Ingresar" class="ingresar">
           <a href="http://localhost:4200/signup"><input type="button" value="Registrarse" class="registrarse"></a>
