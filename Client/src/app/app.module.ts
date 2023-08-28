@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './general/app.component';
 import { UsersComponent } from './users/users.component';
 import { EdituserComponent } from './users/edit-user/edituser/edituser.component';
-import { DeleteComponent } from './users/edit-user/delete/delete.component';
+import { DeleteComponent } from './users/edit-user/deleteUser/delete.component';
 import { ForumComponent } from './forum/forum.component';
 import { HomeComponent } from './home/home.component';
 import { PostListComponent } from './posts/post-list/post-list.component';

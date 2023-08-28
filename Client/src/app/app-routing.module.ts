@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ForumComponent } from './forum/forum.component';
 import { UsersComponent } from './users/users.component';
 import { EdituserComponent } from './users/edit-user/edituser/edituser.component';
-import { DeleteComponent } from './users/edit-user/delete/delete.component';
+import { DeleteComponent } from './users/edit-user/deleteUser/delete.component';
 import { SignUpComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { PostListComponent } from './posts/post-list/post-list.component';

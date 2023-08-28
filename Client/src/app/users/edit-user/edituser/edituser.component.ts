@@ -43,7 +43,7 @@ export class EdituserComponent {
         res => {
           console.log(res)
           this.user = res;
-          this.router.navigate(['/edit']);
+          this.router.navigate(['/userdetail']);
         },
         err => console.log(err)
       )
