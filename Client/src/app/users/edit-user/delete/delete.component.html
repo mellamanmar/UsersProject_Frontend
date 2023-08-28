@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
+  <title>Detalle de usuarios</title>
 </head>
 
 <body>
@@ -106,10 +106,10 @@
             <td>{{user.username}}</td>
             <td>{{user.userType}}</td>
             <td>
-              <form class="botons2" (submit)="edit(user)">
-                <button type="submit" class="ingresar">
+              <form>
+                <a href="http://localhost:4200/edituser"><button type="button" class="ingresar">
                   Editar
-                </button>
+                </button></a>
               </form>
             </td>
             <td>
