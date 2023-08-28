@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   private URL = 'https://usersproject-database.onrender.com/api';
@@ -28,7 +29,7 @@ getUserById(id: any){
 }
 
 editarUser(user: any, id: any){
-  return this.http.patch<any>(this.URL + '/edit/' + user, id);
+  return this.http.patch<any>(this.URL + '/edit/' + id, user);
 }
 
 loggedIn(){
