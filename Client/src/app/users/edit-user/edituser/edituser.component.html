@@ -9,7 +9,7 @@
 
 <body>
   <header>
-    <div class="container">
+    <div class="container2">
 
       <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
         <path
@@ -83,20 +83,37 @@
                   1399.68 17.4214 1453.5 1.98927" stroke="rgb(0,255,255)" stroke-width="2" />
       </svg>
     </div>
+
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+      <div class="spinner diagonal part-1"></div>
+      <div class="spinner horizontal"></div>
+      <div class="spinner diagonal part-2"></div>
+    </label>
+    <div id="sidebarMenu">
+      <ul class="sidebarMenuInner">
+        <li><a href="http://localhost:4200/signup">Registrarse</a></li>
+        <li><a href="http://localhost:4200/signin">Iniciar Sesión</a></li>
+        <li><a href="http://localhost:4200/forum/posts">Foro</a></li>
+        <li><a href="http://localhost:4200/userdetail">Usuarios</a></li>
+        <li><a href="http://localhost:4200/edituser">Editar Perfil</a></li>
+      </ul>
+    </div>
+    
   </header>
   <div>
     <div class="col-md-4 mx-auto">
       <div class="card">
         <h2 class="sesion">Editar perfil</h2>
         <div class="card-body">
-          <form (submit)="editarUser()">
+          <form class="enter" (submit)="editarUser()">
             <div class="form-group">
               <label for="username"> Ingrese nuevo usuario:
                 <input type="text" [(ngModel)]="user.username" id="username" name="username" class="form-control"
                   required autofocus>
               </label>
             </div>
-            <div class="form-group">
+            <div>
               <label for="password"> Ingrese nueva contraseña:
                 <input type="password" [(ngModel)]="user.password" id="password" name="password" class="form-control"
                   required autofocus>

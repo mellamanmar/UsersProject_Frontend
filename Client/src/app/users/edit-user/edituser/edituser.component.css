@@ -26,7 +26,127 @@ header.h1{
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
+}
 
+#sidebarMenu {
+  /* height: 60%; */
+  position: fixed;
+  top: 2.5rem;
+  left: 0.5rem;
+  width: 250px;
+  transform: translateX(-250px);
+  transition: transform 250ms ease-in-out;
+  background: linear-gradient(180deg, #6500e3 0%, #3C0286 100%);
+  z-index: 7;
+}
+
+.sidebarMenuInner {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li {
+  list-style: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  z-index: 11;
+}
+
+.sidebarMenuInner li span {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.50);
+  z-index: 11;
+}
+
+.sidebarMenuInner li a {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 11;
+}
+
+input[type="checkbox"]:checked~#sidebarMenu {
+  transform: translateX(0);
+}
+
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 1.7rem;
+  left: 1.5rem;
+  height: 25px;
+  width: 25px;
+}
+
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+  margin-top: 8px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(-135deg);
+  margin-top: -9px;
 }
 
 main{
@@ -46,9 +166,37 @@ body{
   line-height: normal;
   margin-top: 2rem;
 }
+
+.enter, .select, .option {
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+  gap: 15px;
+  align-self: stretch;
+  border-radius: 50px;
+  border: 1px solid #6500E3;
+  background: #FFF;
+  color: #363636;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* .botons2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  align-self: stretch;
+  margin-bottom: 1rem;
+  width: 1rem;
+} */
+
 .registrarse {
   display: flex;
   padding: 10px 50px;
+  margin: 30px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -95,18 +243,16 @@ body{
 .line2{
   z-index: 1;
   position: absolute;
-  width: auto;
-  margin-bottom: 70px;
-
-
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 
 .line{
   z-index: 1;
   position:absolute;
-  width: auto;
-  margin-top: 70px;
+  width: 100%;
+  margin-top: 20px;
 
 }
 
@@ -121,4 +267,8 @@ justify-content:center;
 margin: 3rem;
 margin-left: 20rem;
 width: 50%;
+}
+
+footer {
+  margin: 20px;
 }
