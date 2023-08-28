@@ -18,14 +18,6 @@ export class UserService {
     )
   }
 
-  editUser(userId: string, userData: any) {
-    return this.httpClient.put<any>(`${this.URL}/edit/${userId}`, userData);
-  }
-
-  deleteUser(userId: string): Observable<any> {
-    return this.httpClient.delete<any>(`${this.URL}/${userId}`);
-  }
-
   createHeaders() :Object {
     return {
       headers : new HttpHeaders ({

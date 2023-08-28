@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  //private URL = 'http://localhost:3000/api';
   private URL = 'https://usersproject-database.onrender.com/api';
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -43,7 +42,7 @@ getToken(){
 logout(){
   localStorage.removeItem('token');
   this.router.navigate(['/tasks']);
- 
+
 }
 
 redirectEdit(id: any){

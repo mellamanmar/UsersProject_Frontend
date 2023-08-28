@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../user.service';
 import { Router } from '@angular/router'
 import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  templateUrl: './delete.component.html',
+  styleUrls: ['./delete.component.css']
 })
-export class EditComponent {
+export class DeleteComponent {
 
   user = {
     _id: '',

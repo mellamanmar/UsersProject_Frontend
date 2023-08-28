@@ -9,6 +9,8 @@ import { SignUpComponent } from './auth/signup/signup.component'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './general/app.component';
 import { UsersComponent } from './users/users.component';
+import { EdituserComponent } from './users/edit-user/edituser/edituser.component';
+import { DeleteComponent } from './users/edit-user/delete/delete.component';
 import { ForumComponent } from './forum/forum.component';
 import { HomeComponent } from './home/home.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
@@ -17,10 +19,13 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component';
 import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
+    EdituserComponent,
+    DeleteComponent,
     ForumComponent,
     HomeComponent,
     SigninComponent,
@@ -28,7 +33,7 @@ import { DeletePostComponent } from './posts/delete-post/delete-post.component';
     PostListComponent,
     PostDetailComponent,
     EditPostComponent,
-    DeletePostComponent
+    DeletePostComponent,
   ],
 
   imports: [
