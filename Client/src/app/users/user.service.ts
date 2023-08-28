@@ -28,7 +28,7 @@ getUserById(id: any){
 }
 
 editarUser(user: any, id: any){
-  return this.http.patch<any>(this.URL + '/edit/' + id, user);
+  return this.http.patch<any>(this.URL + '/edit/' + user, id);
 }
 
 loggedIn(){

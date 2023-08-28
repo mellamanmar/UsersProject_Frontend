@@ -1,4 +1,4 @@
-@media only screen and (width: 390px) and (device-height: 1600px) and (-webkit-device-pixel-ratio: 3){
+/* @media only screen and (width: 390px) and (device-height: 1600px) and (-webkit-device-pixel-ratio: 3){ */
   body{
     width: 100%;
     padding: 10%;
@@ -7,8 +7,9 @@
     width: 100%;
     padding: 10%;
   }
-}
+/* } */
 header {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,9 +19,8 @@ header {
   color:#FFF;
   background-color: #6500E3;
 
-
-  width: 100%;
 }
+
 header.h1{
   font-family: Roboto;
   font-size: 20px;
@@ -72,7 +72,6 @@ body{
   color:#FFF;
   background-color: #6500E3;
   display: flex;
-
   justify-content: center;
   align-items: center;
   width: 100vh;
@@ -101,8 +100,6 @@ body{
   position: absolute;
   width: auto;
   margin-bottom: 70px;
-
-
 }
 
 
@@ -111,7 +108,6 @@ body{
   position:absolute;
   width: auto;
   margin-top: 70px;
-
 }
 
 .titulo{
@@ -119,6 +115,62 @@ display: flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
+}
+
+.campo {
+  cursor: pointer;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 1rem;
+  height: 2rem;
+}
+
+.enter{
+  display: flex;
+  padding: 15px 20px;
+  align-items: center;
+  gap: 15px;
+  align-self: stretch;
+  border-radius: 50px;
+  border: 1px solid #6500E3;
+  background: #FFF;
+  color: #363636;
+  font-family: Roboto;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.botons2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  align-self: stretch;
+  margin-bottom: 1rem;
+  width: 1rem;
+
+  .ingresar{
+    display: flex;
+    padding: 15px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    border-radius: 50px;
+    border: 1px solid #1C003F;
+    background: #6500E3;
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
 }
 
 .tabla{
