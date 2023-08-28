@@ -24,18 +24,10 @@ export class ForumService {
 
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.baseUrl}/posts`);
-  }  
+  }
 
   getPostsByUsername(username: string) {
     return this.http.get(`${this.baseUrl}/${username}`);
-  }
-
-  getById(postId: string): Observable<Post> {
-    return this.http.get<Post>(`${this.baseUrl}/posts/${postId}`);
-  }
-  
-  editPost(postId: string, postData: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/edit/${postId}`, postData);
   }
 
   deletePost(postId: string) {

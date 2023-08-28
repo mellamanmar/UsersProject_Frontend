@@ -13,7 +13,7 @@ export class PostService {
   constructor() { this.URL = 'https://usersproject-database.onrender.com/api/forum'}
 
   getPosts(): Observable<any> {
-    return this.httpClient.get<any>(`${this.URL}/posts`, this.createHeaders());
+    return this.httpClient.get<any>(`${this.URL}/posts`);
   }
 
   getPostById(id: string): Observable<any> {
@@ -34,11 +34,4 @@ export class PostService {
     return this.httpClient.delete<any>(`${this.URL}/delete/${postId}`);
   }
 
-  createHeaders() :Object {
-    return {
-      headers : new HttpHeaders ({
-        'Authorization': localStorage.getItem('token')!
-      })
-    }
-  }
 }
