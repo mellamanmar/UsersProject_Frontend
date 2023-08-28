@@ -1,21 +1,25 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private URL = 'https://usersproject-database.onrender.com/api'
-  constructor( private http:HttpClient ) { }
+  private URL: string;
+  private httpClient = inject(HttpClient);
 
-  signUpUser(newUser: any): Observable<any>{
-    return this.http.post<any>(this.URL + '/signup', newUser);
+  constructor( ) { this.URL = 'https://usersproject-database.onrender.com/api' }
+
+  signUpUser(formValue: any){
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.URL}/signup`, formValue));
   }
 
-  singInUser(user: any): Observable<any>{
-    return this.http.post<any>(this.URL + '/signin', user)
+  singInUser(formValue: any){
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.URL}/signin`, formValue));
   }
 
 }

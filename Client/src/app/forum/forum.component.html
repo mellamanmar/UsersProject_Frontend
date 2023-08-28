@@ -1,23 +1,23 @@
 <h1>Foro</h1>
 <!-- Crear publicación -->
 <form (submit)="createPost()">
-  <input [(ngModel)]="postData.username" name="username" placeholder="Username">
   <input [(ngModel)]="postData.title" name="title" placeholder="Título">
   <textarea [(ngModel)]="postData.content" name="content" placeholder="Contenido"></textarea>
+  <input [(ngModel)]="postData.username" name="username" placeholder="Username">
   <button type="submit">Crear Publicación</button>
 </form>
 
 <!-- Filtros de búsqueda -->
 <div>
   <label for="searchUsername">Buscar por Nombre de Usuario:</label>
-  <input type="text" [(ngModel)]="searchUsername" name="searchUsername" id="searchUsername">
+  <input type="text" ngModel="searchUsername" name="searchUsername" id="searchUsername">
   <button (click)="searchPosts()">Buscar</button>
 </div>
-<div>
+<!-- <div>
   <label for="searchPostId">Buscar por ID de Publicación:</label>
   <input type="text" [(ngModel)]="searchPostId" name="searchPostId" id="searchPostId">
   <button (click)="searchPosts()">Buscar</button>
-</div>
+</div> -->
 
 <!-- Lista de publicaciones -->
 <div *ngFor="let post of posts">
