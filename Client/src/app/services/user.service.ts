@@ -13,13 +13,8 @@ export class UserService {
   constructor() { this.URL ='https://usersproject-database.onrender.com/api'}
 
   getUsers() {
-    const httpOptions : Object =
-    {headers: new HttpHeaders ({
-      'Bearer':localStorage.getItem('token')!
-    })}
-
     return firstValueFrom (
-      this.httpClient.get<any[]>(this.URL + '/users', httpOptions )
+      this.httpClient.get<any[]>(this.URL + '/users', this.createHeaders() )
     )
   }
 
@@ -31,7 +26,11 @@ export class UserService {
     return this.httpClient.delete<any>(`${this.URL}/${userId}`);
   }
 
-  createHeaders() {
-    return {    }
+  createHeaders() :Object {
+    return {
+      headers : new HttpHeaders ({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, first, firstValueFrom } from 'rxjs';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class PostService {
   constructor() { this.URL = 'https://usersproject-database.onrender.com/api/forum'}
 
   getPosts(): Observable<any> {
-    return this.httpClient.get<any>(`${this.URL}/posts`);
+    return this.httpClient.get<any>(`${this.URL}/posts`, this.createHeaders());
   }
 
   getPostById(id: string): Observable<any> {
@@ -32,5 +32,13 @@ export class PostService {
 
   deletePost(postId: string): Observable<any> {
     return this.httpClient.delete<any>(`${this.URL}/delete/${postId}`);
+  }
+
+  createHeaders() :Object {
+    return {
+      headers : new HttpHeaders ({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
   }
 }
