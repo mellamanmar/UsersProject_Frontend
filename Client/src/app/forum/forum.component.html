@@ -1,42 +1,155 @@
-<h1>Foro</h1>
-<!-- Crear publicación -->
-<form (submit)="createPost()">
-  <input [(ngModel)]="postData.username" name="username" placeholder="Username">
-  <input [(ngModel)]="postData.title" name="title" placeholder="Título">
-  <textarea [(ngModel)]="postData.content" name="content" placeholder="Contenido"></textarea>
-  <button type="submit">Crear Publicación</button>
-</form>
+<!DOCTYPE html>
+<html lang="es">
 
-<!-- Filtros de búsqueda -->
-<div>
-  <label for="searchUsername">Buscar por Nombre de Usuario:</label>
-  <input type="text" [(ngModel)]="searchUsername" name="searchUsername" id="searchUsername">
-  <button (click)="searchPosts()">Buscar</button>
-</div>
-<div>
-  <label for="searchPostId">Buscar por ID de Publicación:</label>
-  <input type="text" [(ngModel)]="searchPostId" name="searchPostId" id="searchPostId">
-  <button (click)="searchPosts()">Buscar</button>
-</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
-<!-- Lista de publicaciones -->
-<div *ngFor="let post of posts">
-  <div class="post">
-    <h2>{{ post.title }}</h2>
-    <h4>ID: {{ post._id }}</h4>
-    <p>Publicado por: {{ post.username }}</p>
-    <p>{{ post.content }}</p>
-    <button (click)="deletePost(post._id)">Eliminar</button>
-    <button (click)="editPost(post)">Editar</button>
-  </div>
-</div>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="block">
+      <div class="header">
+        <div class="content-top">
+          <div class="wave-background">
+            <img src="./assets/img/wave.svg" alt="lines">
+          </div>
+          <div class="container">
+            <div class="logo-container">
+              <img src="./assets/img/Logo.png" alt="Logo" class="image">
+              <h1 class="title">GENIUS BOTSITOS</h1>
+            </div>
+          </div>
+          <!-- Menu -->
+          <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+          <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+          </label>
+          <div id="sidebarMenu">
+            <ul class="sidebarMenuInner">
+              <li><a [routerLink]="['signup']">Registrarse</a></li>
+              <li><a [routerLink]="['signin']">Iniciar Sesión</a></li>
+              <li><a [routerLink]="['forum/posts']">Foro</a></li>
+              <li><a [routerLink]="['user']">Usuarios</a></li>
+              <li><a [routerLink]="['edit']">Editar Perfil</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <main>
+    <div class="align">
+      <div class="formulario enter">
+        <h1 class="sesion">Foro</h1>
+        <!-- Crear publicación -->
+        <form (submit)="createPost()">
+          <div class="botons">
+            <div class="campo">
+              <input class="enter" [(ngModel)]="postData.username" name="username" placeholder="Usuario">
+            </div>
+            <div class="campo">
+              <input class="enter" [(ngModel)]="postData.title" name="title" placeholder="Título">
+            </div>
+            <div class="campo">
+              <textarea class="enter-text" [(ngModel)]="postData.content" name="content" placeholder="Contenido"></textarea>
+            </div>
+            <div class="campo">
+              <div class="botons2">
+                <button type="submit" class="ingresar">Crear Publicación</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
 
-<!-- Formulario de edición -->
-<div *ngIf="editingPost">
-  <h2>Editar Publicación</h2>
-  <form (submit)="saveEditedPost()">
-    <input [(ngModel)]="editedPost.title" name="editedTitle" placeholder="Título">
-    <textarea [(ngModel)]="editedPost.content" name="editedContent" placeholder="Contenido"></textarea>
-    <button type="submit">Guardar</button>
-  </form>
-</div>
+      <div class="formulario enter">
+        <!-- Filtros de búsqueda -->
+        <div class="botons">
+          <div class="campo">
+            <label for="searchUsername">Buscar por Nombre de Usuario:</label>
+          </div>
+          <div class="campo">
+            <input class="enter" type="text" [(ngModel)]="searchUsername" name="searchUsername" id="searchUsername">
+          </div>
+          <div class="campo"></div>
+          <div class="botons2">
+            <button type="submit" class="ingresar" (click)="searchPosts()">Buscar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="formulario enter">
+        <!-- Lista de publicaciones -->
+        <div *ngFor="let post of posts">
+          <div class="botons">
+            <div class="campo">
+              <div class="enter">
+                <div class="campo">
+                <h2>{{ post.title }}</h2>
+                <br>
+                <h4>ID: {{ post._id }}</h4>
+                <br>
+                <p>Publicado por: {{ post.username }}</p>
+                <br>
+                <p>{{ post.content }}</p>
+                <br>
+                <div class="botons2">
+                  <button type="submit" class="registrarse" (click)="deletePost(post._id)">Eliminar</button>
+                </div>
+                <div class="campo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <div class="main">
+      <div class="footer">
+        <div class="content">
+          <div class="wave-background-bot">
+            <img src="./assets/img/wave.svg" alt="lines">
+          </div>
+          <div>
+            <div>
+              <a href="https://www.linkedin.com/in/luamartz">Luisa María Martínez Ramírez</a>
+            </div>
+            <div>
+              <a href="https://www.linkedin.com/in/marianny-marquez/">Marianny Melissa Márquez Camacho</a>
+            </div>
+            <div>
+              <a href="#">Gyna Alexandra Herrera Álvarez</a>
+            </div>
+            <div>
+              <a href="#">Jasbbleidy Caterine Arenilla Cantillo</a>
+            </div>
+            <div>
+              <a href="#">Sandra Milena Ruiz López</a>
+            </div>
+            <div>
+              <a href="#">María Fernanda Valencia Farfán</a>
+            </div>
+            <div>
+              <a href="#">Lina Marcela Caro Cortés</a>
+            </div>
+          </div>
+          <div>
+            <img src="./assets/img/Logo.png" alt="Logo" class="image">
+            <p>©2023 Genius Botsitos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

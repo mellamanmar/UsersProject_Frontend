@@ -71,19 +71,6 @@ export class ForumComponent implements OnInit {
       });
   }
 
-  editPost(post: Post): void {
-    this.editingPost = true;
-    this.editedPost = { ...post };
-  }
-
-  saveEditedPost(): void {
-    this.forumService.editPost(this.editedPost._id, this.editedPost)
-      .subscribe(() => {
-        this.editingPost = false;
-        this.getPosts();
-      });
-  }
-
   searchPosts(): void {
     if (this.searchUsername) {
       this.forumService.getPostsByUsername(this.searchUsername)

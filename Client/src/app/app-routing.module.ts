@@ -11,16 +11,17 @@ import { DeletePostComponent } from './posts/delete-post/delete-post.component';
 import { AuthGuard } from './auth.guard';
 import { EditComponent } from './users/user-edit/edit/edit.component';
 import { EditUserComponent } from './users/user-edit/edit-user/edit-user.component';
+import { ForumComponent } from './forum/forum.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signup', pathMatch:'full' },
   { path: 'signup', component: SignUpComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'forum/posts', component: PostListComponent },
-  { path: 'forum/posts/:id', component: PostDetailComponent },
-  { path: 'forum/create', component: CreatePostComponent },
-  { path: 'forum/edit/:id', component: EditPostComponent },
-  { path: 'forum/delete/:id', component: DeletePostComponent },
+  { path: 'forum/posts', component: ForumComponent },
+  // { path: 'forum/posts/:id', component: PostDetailComponent },
+  // { path: 'forum/create', component: CreatePostComponent },
+  // { path: 'forum/edit/:id', component: EditPostComponent },
+  // { path: 'forum/delete/:id', component: DeletePostComponent },
   { path: 'user', component: UsersComponent },
   { path: 'edit', component: EditComponent, canActivate: [AuthGuard] },
   { path: 'edit/user/:id', component: EditUserComponent, canActivate: [AuthGuard] }

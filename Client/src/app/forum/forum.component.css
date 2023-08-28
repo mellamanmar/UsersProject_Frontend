@@ -273,16 +273,8 @@ body {
   }
   
   h2 {
+    padding:1rem;
     text-align: center;
-  }
-  
-  .user {
-    display: flex;
-    padding: 20px;
-    align-items: flex-start;
-    border-radius: 80px;
-    border: 1px solid #3C0286;
-    background: #C18FFF;
   }
   
   .sesion {
@@ -292,9 +284,10 @@ body {
     font-weight: 700;
     line-height: normal;
     margin-top: 2rem;
+    padding: 2rem;
   }
   
-  .enter, .select, .option {
+  .enter {
     display: flex;
     padding: 15px 20px;
     align-items: center;
@@ -308,6 +301,21 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+  .enter-text {
+    display: flex;
+    padding: 15px 20px;
+    align-items: center;
+    gap: 15px;
+    align-self: stretch;
+    border-radius: 50px;
+    border: 1px solid #6500E3;
+    background: #FFF;
+    color: #363636;
+    font-size: 15px;
+    font-style: normal;
+    width:50%;
+    height: auto;
   }
   
   .botons {
@@ -363,55 +371,13 @@ body {
     line-height: normal;
   }
   
-  .container2 {
-    height: 120px;
-    fill: #6500E3;
-    color: #fff;
-    background-color: #6500E3;
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-    /* Centrar horizontalmente */
-    align-items: center;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: auto;
-  }
-  
-  .line2 {
-    z-index: 1;
-    position: absolute;
-    width: auto;
-    margin-bottom: 70px;
-  }
-  
-  /* Estilos generales */
-  .boton-desplegable {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .toggle-buttons {
-    display: none;
-  }
-  
-  .image-button {
-  
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 10px;
-  }
-  
   .campo {
     cursor: pointer;
-    display: block;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1rem;
-    height: 2rem;
+    width: 30rem;
+    height: auto;
   
     .desple {
       display: flex;
@@ -446,16 +412,10 @@ body {
     background-color: #d41414;
   }
   
-  /* Mostrar los botones cuando el checkbox está marcado */
-  .toggle-buttons:checked~.buttons-container {
-    display: block;
-  }
   
   a {
     text-decoration: none;
   }
-  
-  
   .formulario{
     display: flex;
     height: 408px;
@@ -464,6 +424,11 @@ body {
     align-items: center;
     gap: 10px;
     margin-top: 2rem;
+
+    .p{
+      text-color: #000;
+     }
+    
     }
   
   
