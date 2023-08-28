@@ -58,7 +58,8 @@
               <input class="enter" [(ngModel)]="postData.title" name="title" placeholder="Título">
             </div>
             <div class="campo">
-              <textarea class="enter-text" [(ngModel)]="postData.content" name="content" placeholder="Contenido"></textarea>
+              <textarea class="enter-text" [(ngModel)]="postData.content" name="content"
+                placeholder="Contenido"></textarea>
             </div>
             <div class="campo">
               <div class="botons2">
@@ -92,18 +93,21 @@
             <div class="campo">
               <div class="enter">
                 <div class="campo">
-                <h2>{{ post.title }}</h2>
-                <br>
-                <h4>ID: {{ post._id }}</h4>
-                <br>
-                <p>Publicado por: {{ post.username }}</p>
-                <br>
-                <p>{{ post.content }}</p>
-                <br>
-                <div class="botons2">
-                  <button type="submit" class="registrarse" (click)="deletePost(post._id)">Eliminar</button>
+                  <h2>{{ post.title }}</h2>
+                  <br>
+                  <h4>ID: {{ post._id }}</h4>
+                  <br>
+                  <p>Publicado por: {{ post.username }}</p>
+                  <br>
+                  <p>{{ post.content }}</p>
+                  <br>
+                  <div class="botons2">
+                    <button type="submit" class="registrarse" (click)="deletePost(post._id)">Eliminar</button>
+                  </div>
+                  <div class="campo">
+                  </div>
                 </div>
-                <div class="campo">
+              </div>
             </div>
           </div>
         </div>
