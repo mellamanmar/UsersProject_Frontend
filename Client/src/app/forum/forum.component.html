@@ -27,16 +27,5 @@
     <p>Publicado por: {{ post.username }}</p>
     <p>{{ post.content }}</p>
     <button (click)="deletePost(post._id)">Eliminar</button>
-    <button (click)="editPost(post)">Editar</button>
   </div>
-</div>
-
-<!-- Formulario de edición -->
-<div *ngIf="editingPost">
-  <h2>Editar Publicación</h2>
-  <form (submit)="saveEditedPost()">
-    <input [(ngModel)]="editedPost.title" name="editedTitle" placeholder="Título">
-    <textarea [(ngModel)]="editedPost.content" name="editedContent" placeholder="Contenido"></textarea>
-    <button type="submit">Guardar</button>
-  </form>
 </div>
