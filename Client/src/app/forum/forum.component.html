@@ -77,18 +77,17 @@
 
       <!-- Lista de Posts -->
       
-      <div id="app enter">
-        <h1 id="app-heading">Posts</h1>
-        <div id="app-content" class="container">
-          <ul id="post-list enter">
+        <h1 id="title">Publicaciones</h1>
+        
+          <ul id="post-list">
             <li class="post" *ngFor="let post of posts">
-              <div class="user-info">
-                <p>Publicado por: {{ post.username }}</p>
-              </div>
               <div class="post-info">
-                <h2 class="title-h2">{{ post.title }}</h2>
-                <p class="content-p">ID: {{ post._id }}</p>
-                <p class="content-p">{{ post.content }}</p>
+                <h2 id="h2">{{ post.title }}</h2>
+                <h4 id="h4">ID: {{ post._id }}</h4>
+                <div class="user-info">
+                  <p id="p">Publicado por: {{ post.username }}</p>
+                </div>
+                <p id="p">{{ post.content }}</p>
                 <div class="botons2">
                   <button type="submit" class="registrarse" (click)="deletePost(post._id)">Eliminar</button>
                 </div>
@@ -96,9 +95,8 @@
             </li>
           </ul>
         </div>
-      </div>
-      
-    </div>
+
+    
   </main>
 
   <!-- footer -->
