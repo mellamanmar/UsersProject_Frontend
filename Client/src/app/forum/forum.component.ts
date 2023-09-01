@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ForumService, Post } from './forum.service';
 import { tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -24,46 +24,45 @@ export class ForumComponent implements OnInit {
     username: '',
   }
 
+  isHeaderShrunk = false;
+
   constructor(private forumService: ForumService) { }
 
   ngOnInit(): void {
     this.getPosts();
   }
 
-  // title: string = '';
-  // content: string = '';
-  // username: string = '';
-
-  createPost() {
-    this.forumService.createPost(this.postData)
-    .pipe(tap(res => {console.log(res)})).subscribe()
+  // Animacion al hacer scroll jQuery
+  @HostListener('window:scroll', ['$event']) onWindowScroll() {
+    const self = this;
+    $(function () {
+      const shrinkHeader = 100;
+      $(window).scroll(function () {
+        const scroll = self.getCurrentScroll();
+        if (scroll >= shrinkHeader) {
+          $('.header').addClass('shrink');
+          self.isHeaderShrunk = true;
+        } else {
+          $('.header').removeClass('shrink');
+          self.isHeaderShrunk = false;
+        }
+      });
+    });
   }
 
-  // createPost(): void {
-  //   // const postData = {
-  //   //   title: this.title,
-  //   //   content: this.content,
-  //   //   username: this.username,
+  //Crear post
+  createPost() {
+    this.forumService.createPost(this.postData)
+      .pipe(tap(res => { console.log(res) })).subscribe()
+  }
 
-  //   // };
-
-  //   this.forumService.createPost(this.postData)
-  //     .subscribe(() => {
-  //       this.getPosts();
-  //       this.postData.title = '';
-  //       this.postData.content = '';
-  //       this.postData.username = '';
-  //       res => {
-  //         console.log(res);
-  //       }
-  //     });
-  // }
-
+  // Obtener posts
   getPosts(): void {
     this.forumService.getPosts()
       .subscribe(posts => this.posts = posts);
   }
 
+  // BOrrar posts
   deletePost(postId: string): void {
     this.forumService.deletePost(postId)
       .subscribe(() => {
@@ -71,6 +70,7 @@ export class ForumComponent implements OnInit {
       });
   }
 
+  // Buscar posts por username
   searchPosts(): void {
     if (this.searchUsername) {
       this.forumService.getPostsByUsername(this.searchUsername)
@@ -78,5 +78,9 @@ export class ForumComponent implements OnInit {
     } else {
       this.getPosts();
     }
+  }
+
+  getCurrentScroll(): number {
+    return window.pageYOffset || document.documentElement.scrollTop;
   }
 }
