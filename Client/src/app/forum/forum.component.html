@@ -17,7 +17,7 @@
           <img id="waves" src="./assets/img/wave.svg" alt="lines">
         </div>
         <div class="logo-container">
-          <img id="lg" src="./assets/img/Logo.svg" alt="Logo">
+          <img id="lg" src="./assets/img/Virus.svg" alt="Logo">
           <h1 class="title logo">GENIUS BOTSITOS</h1>
         </div>
 
@@ -63,7 +63,7 @@
               <input class="enter ease" [(ngModel)]="postData.title" name="title" placeholder="Título">
             </div>
             <div class="campo">
-              <textarea class="enter-text ease" [(ngModel)]="postData.content" name="content"
+              <textarea class="enter-text" [(ngModel)]="postData.content" name="content"
                 placeholder="Contenido"></textarea>
             </div>
             <div class="campo">
@@ -76,27 +76,45 @@
       </div>
 
       <!-- Lista de Posts -->
-      
+      <div>
         <h1 id="title">Publicaciones</h1>
-        
-          <ul id="post-list">
+        <ul class="grid">
+          <li class="grid item" *ngFor="let post of posts">
+            <div class="card">
+              <div class="card__bottom">
+                <div>
+                  <h2>{{ post.title }}</h2>
+                  <h3>Publicado por: {{ post.username }}</h3>
+                  <h3>ID: {{ post._id }}</h3>
+                </div>
+                <hr>
+                <p class="card__text">{{ post.content }}</p>
+              </div>
+              <div class="card__top">
+                <button class="card__tag" type="submit" (click)="deletePost(post._id)">
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- <ul id="post-list">
             <li class="post" *ngFor="let post of posts">
               <div class="post-info">
                 <h2 id="h2">{{ post.title }}</h2>
                 <h4 id="h4">ID: {{ post._id }}</h4>
-                <div class="user-info">
-                  <p id="p">Publicado por: {{ post.username }}</p>
-                </div>
+                <p id="p">Publicado por: {{ post.username }}</p>
                 <p id="p">{{ post.content }}</p>
                 <div class="botons2">
                   <button type="submit" class="registrarse" (click)="deletePost(post._id)">Eliminar</button>
                 </div>
               </div>
             </li>
-          </ul>
-        </div>
+          </ul> -->
+      </div>
+    </div>
 
-    
   </main>
 
   <!-- footer -->
@@ -126,12 +144,9 @@
           <div>
             <a href="#">María Fernanda Valencia Farfán</a>
           </div>
-          <div>
-            <a href="#">Lina Marcela Caro Cortés</a>
-          </div>
         </div>
         <div>
-          <img src="./assets/img/Logo.svg" alt="Logo" class="image">
+          <img src="./assets/img/Virus.svg" alt="Logo" class="image">
           <p>©2023 Genius Botsitos</p>
         </div>
       </div>
