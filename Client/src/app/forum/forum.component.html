@@ -17,7 +17,7 @@
           <img id="waves" src="./assets/img/wave.svg" alt="lines">
         </div>
         <div class="logo-container">
-          <img id="lg" src="./assets/img/Virus.svg" alt="Logo">
+          <img id="lg" src="./assets/img/Logo.svg" alt="Logo">
           <h1 class="title logo">GENIUS BOTSITOS</h1>
         </div>
 
@@ -43,62 +43,67 @@
   <!-- content -->
   <main>
     <div class="align">
-      <div class="formulario">
+      <div class="form">
         <h1>Foro</h1>
+        <hr>
         <!-- Filtros de búsqueda -->
-        <div class="sample ten">
-          <input class="enter" type="text" [(ngModel)]="searchUsername" name="searchUsername" id="searchUsername"
-            placeholder="Buscar por usuario">
-          <button type="submit" class="btn btn-search ingresar ease" (click)="searchPosts()">
-            <i class="fa fa-search"></i>
-          </button>
+        <div class="wrap">
+          <div class="search">
+            <input type="text" [(ngModel)]="searchUsername" name="searchUsername" id="searchUsername"
+              placeholder="Buscar por usuario" class="searchTerm">
+            <button type="submit" class="searchButton" (click)="searchPosts()">
+              Buscar
+            </button>
+          </div>
         </div>
-        <!-- Crear publicación -->
-        <form (submit)="createPost()">
-          <div class="botons">
-            <div class="campo">
-              <input class="enter ease" [(ngModel)]="postData.username" name="username" placeholder="Usuario">
-            </div>
-            <div class="campo">
-              <input class="enter ease" [(ngModel)]="postData.title" name="title" placeholder="Título">
-            </div>
-            <div class="campo">
-              <textarea class="enter-text" [(ngModel)]="postData.content" name="content"
-                placeholder="Contenido"></textarea>
-            </div>
-            <div class="campo">
-              <div class="botons2">
-                <button type="submit" class="ingresar ease">Crear Publicación</button>
+<br>
+          <!-- Crear publicación -->
+          <div class="">
+            <div class=" ">
+              <div class="card1">
+                <div class="cardBottom">
+                  <form (submit)="createPost()">
+                    <input class="cardTag tag" [(ngModel)]="postData.username" name="username" placeholder="Usuario">
+                    <input class="cardTag tag" [(ngModel)]="postData.title" name="title" placeholder="Título">
+                    <textarea class="enter-text cardTag tag" [(ngModel)]="postData.content" name="content"
+                      placeholder="Contenido"></textarea>
+                  </form>
+                </div>
+                <div class="cardTop">
+                  <button type="submit" class="cardTag">
+                    Crear Publicación
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
 
-      <!-- Lista de Posts -->
-      <div>
-        <ul class="grid">
-          <li class="grid item" *ngFor="let post of posts">
-            <div class="card">
-              <div class="card__bottom">
-                <div>
-                  <h2>{{ post.title }}</h2>
-                  <h3>Publicado por: {{ post.username }}</h3>
-                  <h3>ID: {{ post._id }}</h3>
+
+        <!-- Lista de Posts -->
+        <div>
+          <ul class="grid">
+            <li class="grid item" *ngFor="let post of posts">
+              <div class="card">
+                <div class="card__bottom">
+                  <div>
+                    <h2>{{ post.title }}</h2>
+                    <h3>Publicado por: {{ post.username }}</h3>
+                    <h3>ID: {{ post._id }}</h3>
+                  </div>
+                  <hr>
+                  <p class="card__text">{{ post.content }}</p>
                 </div>
-                <hr>
-                <p class="card__text">{{ post.content }}</p>
+                <div class="card__top">
+                  <button class="card__tag" type="submit" (click)="deletePost(post._id)">
+                    Eliminar
+                  </button>
+                </div>
               </div>
-              <div class="card__top">
-                <button class="card__tag" type="submit" (click)="deletePost(post._id)">
-                  Eliminar
-                </button>
-              </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
   </main>
 
   <!-- footer -->
@@ -130,7 +135,7 @@
           </div>
         </div>
         <div>
-          <img src="./assets/img/Virus.svg" alt="Logo" class="image">
+          <img src="./assets/img/Logo.svg" alt="Logo" class="image">
           <p>©2023 Genius Botsitos</p>
         </div>
       </div>

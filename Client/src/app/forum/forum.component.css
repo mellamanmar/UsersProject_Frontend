@@ -124,6 +124,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
 }
+
 /* menu */
 #sidebarMenu {
   position: fixed;
@@ -326,58 +327,37 @@ p {
 
 /* filtro busquedas */
 
-input {
-  border: 1px solid #6500E3;
-  font-size: 12px;
-  height: auto;
-  padding: 3px 8px;
-  position: absolute;
-  width: 80%;
-  border-radius: 15px;
-  transition: all .6s ease-in-out .3s;
-}
-button{
-  transform: rotateZ(360deg);
-  transition: all .6s ease-in-out;
-      
-}
-.btn-search {
-  background: #E6D1FF;
-  border-radius: 50%;
-  height: 26px;
-  left: 172px;
-  top: 2px;
-  transition-delay: .3s;
-  width: 26px;
-}
-:focus {
-  outline: none;
-  transition-delay: 0;
+.search {
   width: 100%;
-}
-
-.sample {
-  float: left;
-  height: 50px;
   position: relative;
-  width: 70%;
+  display: flex;
 }
 
-.ease {
-  transition: all .6s ease-in-out;
+.searchTerm {
+  width: 100%;
+  border: 1px solid var(--accentComplementary);
+  border-right: none;
+  padding: 5px 20px;
+  height: 28px;
+  border-radius: 25px 0 0 25px;
+  outline: none;
 }
 
-@keyframes bounceRight {
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
+.searchTerm:focus{
+  color: var(--accentComplementary);
 }
+
+.searchButton {
+  width: 100px;
+  height: 40px;
+  background: var(--accentComplementary);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+}
+
+/* Create post */
 form {
   display: flex;
   flex-direction: column;
@@ -385,147 +365,52 @@ form {
   align-items: center;
   width: 100%;
   padding: 10%;
+  gap: 10px;
+
 }
 
-.enter,
-.enter-text {
-  display: flex;
-  padding: 15px 20px;
-  align-items: center;
-  gap: 15px;
-  align-self: stretch;
-  border-radius: 50px;
-  border: 1px solid #6500E3;
-  background: #FFF;
-  color: #363636;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.enter-text {
-  width: 100%;
-  height: auto;
-}
-
-.enter-form {
-  display: flex;
-  padding: 15px 20px;
-  align-items: center;
-  gap: 15px;
-  align-self: stretch;
-  border-radius: 30px;
-  border: 1px solid #6500E3;
-  background: #FFF;
-  color: #363636;
-  font-size: 15px;
-  font-style: normal;
-  width: 100%;
-  height: auto;
-}
-
-.botons {
+.card1 {
+  border-radius: 35px;
+  overflow: hidden;
+  height: 70%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
-
+  justify-content: space-between;
 }
 
-.botons2 {
+.cardTop {
+  position: relative;
+  background-color: rgb(71, 5, 171);
+  padding: 65px 35px 35px 35px;
+  z-index: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cardBottom {
+  position: relative;
+  margin-bottom: -35px;
+  background-color: #f2e8ff;
+  border-radius: 35px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  align-self: stretch;
-  margin-bottom: 1rem;
-  width: 1rem;
-
-}
-
-.ingresar {
-  display: flex;
-  padding: 15px 50px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  display: flex;
-  border-radius: 50px;
-  border: 1px solid #1C003F;
-  background: #6500E3;
-  color: #FFF;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.registrarse {
-  display: flex;
-  padding: 10px 50px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 50px;
-  border: 1px solid #3C0286;
-  background: #E6D1FF;
-  color: #3C0286;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.campo {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30rem;
-  height: auto;
-}
-
-.desple {
-  display: flex;
-  justify-content: left;
-
-}
-
-.buttons-container {
-  display: none;
-  position: absolute;
-  background-color: white;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  flex-grow: 1;
   z-index: 1;
-  top: 100%;
-  left: 0;
 }
-
-/* Estilo de los botones en el contenedor */
-.desplegar-option {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
+.tag {
+  border: 1px solid var(--accentComplementary)!important;
 }
-
-/* Cambiar el color al pasar el cursor por encima */
-.desplegar-option:hover {
-  background-color: #d41414;
-}
-
-.formulario {
-  display: flex;
-  height: 408px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 2rem;
+.cardTag {
+  padding: 10px 20px;
+  border: 1px solid #ebe1f6;
+  color: white;
+  border-radius: 2rem;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.10);
+  font-style: normal;
+  height: auto;
 }
 
 /* get posts */
